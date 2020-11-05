@@ -1,4 +1,6 @@
 import React from "react";
+// import { graphql } from 'gatsby'
+
 
 import Layout from "../components/Layout";
 // import Image from "../components/image";
@@ -6,7 +8,9 @@ import { useStaticQuery, graphql } from "gatsby";
 
 import SEO from "../components/SEO";
 
-const IndexPage = () => {
+const IndexPage = ({
+  data : { site, booksQuery}
+}) => {
   // const posts = useStaticQuery(
   //   graphql`
   //     query {
@@ -34,8 +38,42 @@ const IndexPage = () => {
           description={p.excerpt}
         />
       ))} */}
+      <h1>Tanisha Sabherwal</h1>
+      <div>
+        <h2>Garden</h2>
+        <div>
+            {
+              booksQuery && booksQuery.edges.map(i=>(
+                <p>{i.node.id}</p>
+              ))
+            }
+        </div>
+      </div>
     </Layout>
   );
 };
 
 export default IndexPage;
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    booksQuery:allMdx(      filter: {
+      frontmatter: { type: { eq: "book" }, published: { ne: false } }
+    }) {
+  edges {
+    node {
+      id
+      slug
+      frontmatter {
+        title
+      }
+    }
+  }
+  }
+  }
+`
