@@ -5,7 +5,7 @@ import React from "react";
 import Layout from "../components/Layout";
 // import Image from "../components/image";
 import { useStaticQuery, graphql } from "gatsby";
-
+import Hero from "../components/Hero"
 import SEO from "../components/SEO";
 
 const IndexPage = ({
@@ -38,7 +38,8 @@ const IndexPage = ({
           description={p.excerpt}
         />
       ))} */}
-      <h1>Tanisha Sabherwal</h1>
+      <Hero />
+      {/* <h1>Tanisha Sabherwal</h1> */}
       <div>
         <h2>Garden</h2>
         <div>

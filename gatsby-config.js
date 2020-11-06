@@ -55,6 +55,15 @@ module.exports = {
         ],
         plugins: [`gatsby-remark-images`],
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `montserrat`,
+        ],
+        display: 'swap'
+      }
+    },
   ],
 }
