@@ -25,12 +25,13 @@ export const tokens = {
       2: '0.75em',
       3: '0.875em',
       4: '1em',
-      5: '20px',
+      5: '1.25em',
       6: '24px',
       7: '32px',
-      8: '48px',
+      8: '3em',
       9: '64px',
-      10: '72px'
+      10: '4.5em',
+      11:'5.5em'
     },
     fontWeights: {
       thin: 100,
@@ -80,7 +81,8 @@ export const tokens = {
             1:'#3C3446'
         },
         secondary:{
-            0:'#F4F1F7'
+            0:'#ffffff',
+            1:'#F4F1F7'
         },
         tertiary:{
             0:'#4F80E2'

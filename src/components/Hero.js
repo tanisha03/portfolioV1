@@ -1,34 +1,35 @@
 import React from 'react'
 import styled from 'styled-components';
+import {tokens} from "../../config/themes"
 
 const HeroContainer = styled.div`
-    padding:64px;
+    padding:${tokens.space[16]};
     display:flex;
     flex-direction:column;
     align-items:center;
     .first-name{
-        font-size:92px;
-        color:#1f1b24;
+        font-size:${tokens.fontSizes[11]};
+        color:${tokens.colors.primary[0]};
         text-transform:uppercase;
         width: fit-content;
     }
     .last-name{
-        font-size:72px;
-        color:#ffffff;
-        background-color:#1f1b24;
-        padding:8px;
+        font-size:${tokens.fontSizes[10]};
+        color:${tokens.colors.secondary[0]};
+        background-color:${tokens.colors.primary[0]};
+        padding:${tokens.space[2]};
         text-transform:uppercase;
         width: fit-content;
     }
     .desc{
-        color:#3c3446;
-        font-size:48px;
+        color:${tokens.colors.primary[1]};
+        font-size:${tokens.fontSizes[8]};
         width: fit-content;
     }
     .bio{
-        color:#1f1b24;
-        font-size:20px;
-        padding: 32px;
+        color:${tokens.colors.primary[0]};
+        font-size:${tokens.fontSizes[5]};
+        padding: ${tokens.space[8]};
         width:50%;
         text-align:center;
     }
