@@ -3,12 +3,13 @@ import PropTypes from "prop-types";
 import React from "react";
 import {LINKS} from "./constant";
 import styled from 'styled-components';
+import {tokens} from "../../../config/themes"
 
 const NavHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items:center;
-  padding:32px;
+  padding:${tokens.space[8]};
   font-family: Montserrat;
 `;
 
@@ -17,9 +18,9 @@ const NavList = styled.ul`
   list-style:none;
   a{
     text-decoration:none;
-    margin: 0 16px;
-    color:#3C3446;
-    font-size:18px;
+    margin: 0 ${tokens.space[4]};
+    color:${tokens.colors.primary[1]};
+    font-size:${tokens.fontSizes[4]};
   }
 `;
 
