@@ -23,8 +23,8 @@ const Layout = ({ children }) => {
       <div className="main-area">
         <div
           style={{
-            // margin: `0 auto`,
-            // maxWidth: 960,
+            // margin: `0 48px`,
+            // width: '1080px',
             // padding: `0 1.0875rem 1.45rem`,
             fontFamily: 'Montserrat'
           }}

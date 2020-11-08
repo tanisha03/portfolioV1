@@ -10,7 +10,7 @@ const NavHeader = styled.header`
   justify-content: space-between;
   align-items:center;
   padding:${tokens.space[8]};
-  font-family: Montserrat;
+  font-family: ${tokens.font.primary};
 `;
 
 const NavList = styled.ul`

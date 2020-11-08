@@ -7,6 +7,7 @@ import Layout from "../components/Layout";
 import { useStaticQuery, graphql } from "gatsby";
 import Hero from "../components/Hero"
 import SEO from "../components/SEO";
+import SectionPartition from "../components/SectionPartition";
 
 const IndexPage = ({
   data : { site, booksQuery}
@@ -41,6 +42,17 @@ const IndexPage = ({
       <Hero />
       {/* <h1>Tanisha Sabherwal</h1> */}
       <div>
+        <SectionPartition 
+          header="Digital Garden"
+          description="A Software Engineer who talks about development, 
+          design, products and everything at its intersection."
+          >
+            <div>
+              <img src="https://images-na.ssl-images-amazon.com/images/I/41NbRv8byAL._SX329_BO1,204,203,200_.jpg"/>
+              <img src="https://images-na.ssl-images-amazon.com/images/I/41NbRv8byAL._SX329_BO1,204,203,200_.jpg"/>
+              <img src="https://images-na.ssl-images-amazon.com/images/I/41NbRv8byAL._SX329_BO1,204,203,200_.jpg"/>
+            </div>
+          </SectionPartition>
         <h2>Garden</h2>
         <div>
             {

@@ -4,7 +4,7 @@ import {tokens} from "../../config/themes"
 
 
 const FooterContainer = styled.div`
-    font-family:Montserrat;
+    font-family:${tokens.font.primary};
     font-size:${tokens.fontSizes[3]};
     font-weight:${tokens.fontWeights.thin};
     color:${tokens.colors.primary[1]};

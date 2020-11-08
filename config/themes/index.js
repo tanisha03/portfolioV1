@@ -1,4 +1,7 @@
 export const tokens = {
+    font:{
+      primary:'Montserrat'
+    },
     space: {
       0: 0,
       1: '4px',
