@@ -56,6 +56,8 @@ module.exports = {
         plugins: [`gatsby-remark-images`],
       }
     },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {

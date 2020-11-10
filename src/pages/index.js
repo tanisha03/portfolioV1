@@ -46,11 +46,21 @@ const IndexPage = ({
           header="Digital Garden"
           description="A Software Engineer who talks about development, 
           design, products and everything at its intersection."
+          linkLabel="Visit the Garden"
           >
             <div>
-              <img src="https://images-na.ssl-images-amazon.com/images/I/41NbRv8byAL._SX329_BO1,204,203,200_.jpg"/>
-              <img src="https://images-na.ssl-images-amazon.com/images/I/41NbRv8byAL._SX329_BO1,204,203,200_.jpg"/>
-              <img src="https://images-na.ssl-images-amazon.com/images/I/41NbRv8byAL._SX329_BO1,204,203,200_.jpg"/>
+              <div>
+              {
+                booksQuery && booksQuery.edges.map(i=>(
+                  <>
+                  {/* <p>{i.node.frontmatter.cover.childImageSharp.fluid.src}</p> */}
+                  <img src={i.node.frontmatter.cover.childImageSharp.fluid.src}/>
+                  {/* <p>{i.node.id}</p> */}
+                  </>
+                ))
+              }
+              </div>
+              {/* <a href="#">Visit the Garden</a> */}
             </div>
           </SectionPartition>
         <h2>Garden</h2>
@@ -75,18 +85,23 @@ export const pageQuery = graphql`
         title
       }
     }
-    booksQuery:allMdx(      filter: {
-      frontmatter: { type: { eq: "book" }, published: { ne: false } }
-    }) {
-  edges {
-    node {
-      id
-      slug
-      frontmatter {
-        title
+    booksQuery: allMdx(filter: {frontmatter: {type: {eq: "book"}}}, sort: {order: DESC, fields: frontmatter___date}) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date
+            cover {
+              childImageSharp {
+                fluid(maxWidth: 160, maxHeight:250) {
+                  src
+                }
+              }
+          }
+        }
       }
     }
-  }
   }
   }
 `
