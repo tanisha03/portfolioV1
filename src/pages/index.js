@@ -10,7 +10,7 @@ import SEO from "../components/SEO";
 import SectionPartition from "../components/SectionPartition";
 
 const IndexPage = ({
-  data : { site, booksQuery}
+  data : { site, booksQuery, notesQuery}
 }) => {
   // const posts = useStaticQuery(
   //   graphql`
@@ -42,11 +42,32 @@ const IndexPage = ({
       <Hero />
       {/* <h1>Tanisha Sabherwal</h1> */}
       <div>
-        <SectionPartition 
+      <SectionPartition 
           header="Digital Garden"
           description="A Software Engineer who talks about development, 
           design, products and everything at its intersection."
           linkLabel="Visit the Garden"
+          >
+            <div>
+              <div>
+              {
+                notesQuery && notesQuery.edges.map(i=>(
+                  <>
+                  {/* <p>{i.node.frontmatter.cover.childImageSharp.fluid.src}</p> */}
+                  <p>{i.node.frontmatter.title}</p>
+                  {/* <p>{i.node.id}</p> */}
+                  </>
+                ))
+              }
+              </div>
+              {/* <a href="#">Visit the Garden</a> */}
+            </div>
+          </SectionPartition>
+        <SectionPartition 
+          header="Book Shelf"
+          description="A Software Engineer who talks about development, 
+          design, products and everything at its intersection."
+          linkLabel="Browse the Book shelf"
           >
             <div>
               <div>
@@ -85,7 +106,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    booksQuery: allMdx(filter: {frontmatter: {type: {eq: "book"}}}, sort: {order: DESC, fields: frontmatter___date}) {
+    booksQuery: allMdx(filter: {frontmatter: {type: {eq: "book"}}}, sort: {order: DESC, fields: frontmatter___date}, limit: 3) {
       edges {
         node {
           id
@@ -94,14 +115,26 @@ export const pageQuery = graphql`
             date
             cover {
               childImageSharp {
-                fluid(maxWidth: 160, maxHeight:250) {
+                fluid(maxWidth: 160, maxHeight: 250) {
                   src
                 }
               }
+            }
+          }
+        }
+      }
+    }
+    gardenQuery: allMdx(filter: {frontmatter: {type: {eq: "notes"}}}, sort: {order: DESC, fields: frontmatter___date}, limit: 3) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date
           }
         }
       }
     }
   }
-  }
+  
 `
