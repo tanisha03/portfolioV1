@@ -1,10 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
-
+import styled from 'styled-components';
 import Header from "./Header/index.js";
 import Footer from "./Footer";
 import "./index.css";
+import {tokens} from "../../config/themes"
+
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -17,21 +19,20 @@ const Layout = ({ children }) => {
     }
   `);
 
+const Container = styled.div`
+    font-family:${tokens.font.primary};
+    a{
+      text-decoration:none;
+      color:${tokens.colors.tertiary[0]}
+    }
+`;
+
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div className="main-area">
-        <div
-          style={{
-            // margin: `0 48px`,
-            // width: '1080px',
-            // padding: `0 1.0875rem 1.45rem`,
-            fontFamily: 'Montserrat'
-          }}
-        >
+      <Container>
           <main>{children}</main>
-        </div>
-      </div>
+      </Container>
       <Footer />
     </>
   );
