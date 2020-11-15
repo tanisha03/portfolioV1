@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/Layout";
-import {graphql } from "gatsby";
+import {graphql, Link } from "gatsby";
 import Hero from "../components/Hero"
 import SEO from "../components/SEO";
 import SectionPartition from "../components/SectionPartition";
@@ -39,7 +39,9 @@ const IndexPage = ({
               <div style={{display:"flex"}}>
               {
                 gardenQuery && gardenQuery.edges.map(i=>(
-                  <GardenCard>{i.node.frontmatter.title}</GardenCard>
+                  <Link to={i.node.frontmatter.slug}>
+                      <GardenCard>{i.node.frontmatter.title}</GardenCard>
+                  </Link>
                 ))
               }
               </div>
@@ -57,7 +59,9 @@ const IndexPage = ({
               <div>
               {
                 booksQuery && booksQuery.edges.map(i=>(
-                  <img src={i.node.frontmatter.cover.childImageSharp.fluid.src} style={{margin:`0 ${tokens.space[4]}`}}/>
+                  <Link to={i.node.frontmatter.slug}>
+                      <img src={i.node.frontmatter.cover.childImageSharp.fluid.src} style={{margin:`0 ${tokens.space[4]}`}}/>
+                  </Link>
                 ))
               }
               </div>
@@ -84,6 +88,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             date
+            slug
             cover {
               childImageSharp {
                 fluid(maxWidth: 160, maxHeight: 250) {
@@ -102,6 +107,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             date
+            slug
           }
         }
       }

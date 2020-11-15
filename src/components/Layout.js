@@ -7,6 +7,14 @@ import Footer from "./Footer";
 import "./index.css";
 import {tokens} from "../../config/themes"
 
+const Container = styled.div`
+    font-family:${tokens.font.primary};
+    a{
+      text-decoration:none;
+      color:${tokens.colors.tertiary[0]}
+    }
+`;
+
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -18,14 +26,6 @@ const Layout = ({ children }) => {
       }
     }
   `);
-
-const Container = styled.div`
-    font-family:${tokens.font.primary};
-    a{
-      text-decoration:none;
-      color:${tokens.colors.tertiary[0]}
-    }
-`;
 
   return (
     <>
