@@ -10,7 +10,7 @@ import {tokens} from "../../config/themes"
 
 const GardenCard =  styled.div`
   height:200px;
-  width:150px;
+  width:160px;
   background-color:white;
   display:flex;
   justify-content:center;

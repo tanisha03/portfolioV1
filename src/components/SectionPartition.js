@@ -1,4 +1,4 @@
-import React, { Children } from 'react'
+import React from 'react'
 import styled from 'styled-components';
 import {tokens} from "../../config/themes"
 // import ArrowIcon from '../assets/icons/right-arrow.svg';
@@ -26,11 +26,12 @@ const SectionWrapper=styled.div`
 
 const SectionContent=styled.div`
     display:flex;
+    align-items:center;
     p{
         font-size:${tokens.fontSizes[4]};
         color:${tokens.colors.primary[0]};
         font-weight:${tokens.fontWeights[1]};
-        width:35%;
+        width:30%;
     }
     .container{
         width:60%;

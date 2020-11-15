@@ -30,6 +30,11 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: ['.mdx', '.md', '.markdown'],
+        defaultLayouts: {
+          Books: require.resolve("./src/components/Layout.js"),
+          Garden: require.resolve("./src/components/Layout.js"),
+          default: require.resolve("./src/components/Layout.js")
+        },
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-embedder`,
@@ -67,5 +72,17 @@ module.exports = {
         display: 'swap'
       }
     },
+    {
+      resolve: "gatsby-plugin-page-creator",
+      options: {
+        path: `${__dirname}/content/books`
+      }
+    },
+    {
+      resolve: "gatsby-plugin-page-creator",
+      options: {
+        path: `${__dirname}/content/garden`
+      }
+    }
   ],
 }
