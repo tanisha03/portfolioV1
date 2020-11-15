@@ -4,9 +4,23 @@ import {graphql } from "gatsby";
 import Hero from "../components/Hero"
 import SEO from "../components/SEO";
 import SectionPartition from "../components/SectionPartition";
+import styled from 'styled-components';
+import {tokens} from "../../config/themes"
+
+
+const GardenCard =  styled.div`
+  height:200px;
+  width:150px;
+  background-color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:0 ${tokens.space[4]};
+`;
+
 
 const IndexPage = ({
-  data : { site, booksQuery, notesQuery}
+  data : { site, booksQuery, gardenQuery}
 }) => {
   return (
     <Layout>
@@ -22,10 +36,10 @@ const IndexPage = ({
           linkLabel="Visit the Garden"
           >
             <div>
-              <div>
+              <div style={{display:"flex"}}>
               {
-                notesQuery && notesQuery.edges.map(i=>(
-                  <p>{i.node.frontmatter.title}</p>
+                gardenQuery && gardenQuery.edges.map(i=>(
+                  <GardenCard>{i.node.frontmatter.title}</GardenCard>
                 ))
               }
               </div>
@@ -43,7 +57,7 @@ const IndexPage = ({
               <div>
               {
                 booksQuery && booksQuery.edges.map(i=>(
-                  <img src={i.node.frontmatter.cover.childImageSharp.fluid.src}/>
+                  <img src={i.node.frontmatter.cover.childImageSharp.fluid.src} style={{margin:`0 ${tokens.space[4]}`}}/>
                 ))
               }
               </div>
