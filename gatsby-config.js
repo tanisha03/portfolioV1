@@ -27,6 +27,13 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/content/codeDraw`,
+        name: 'Drawings',
+      },
+    },
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: ['.mdx', '.md', '.markdown'],
@@ -82,6 +89,12 @@ module.exports = {
       resolve: "gatsby-plugin-page-creator",
       options: {
         path: `${__dirname}/content/garden`
+      }
+    },
+    {
+      resolve: "gatsby-plugin-page-creator",
+      options: {
+        path: `${__dirname}/content/codeDraw`
       }
     }
   ],

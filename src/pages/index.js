@@ -20,7 +20,7 @@ const GardenCard =  styled.div`
 
 
 const IndexPage = ({
-  data : { site, booksQuery, gardenQuery}
+  data : { site, booksQuery, gardenQuery,drawingsQuery}
 }) => {
   return (
     <Layout>
@@ -67,6 +67,26 @@ const IndexPage = ({
               </div>
             </div>
         </SectionPartition>
+
+        {/* Code Draw */}
+        <SectionPartition 
+          header="Code Drawings"
+          description="A Software Engineer who talks about development, 
+          design, products and everything at its intersection."
+          linkLabel="Explore Code Drawings"
+          >
+            <div>
+              <div>
+              {
+                drawingsQuery && drawingsQuery.edges.map(i=>(
+                  <Link to={i.node.frontmatter.slug}>
+                      <img src={i.node.frontmatter.cover.childImageSharp.fluid.src} style={{margin:`0 ${tokens.space[4]}`}}/>
+                  </Link>
+                ))
+              }
+              </div>
+            </div>
+        </SectionPartition>
       </div>
     </Layout>
   );
@@ -82,6 +102,25 @@ export const pageQuery = graphql`
       }
     }
     booksQuery: allMdx(filter: {frontmatter: {type: {eq: "book"}}}, sort: {order: DESC, fields: frontmatter___date}, limit: 3) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date
+            slug
+            cover {
+              childImageSharp {
+                fluid(maxWidth: 160, maxHeight: 250) {
+                  src
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    drawingsQuery: allMdx(filter: {frontmatter: {type: {eq: "drawings"}}}, sort: {order: DESC, fields: frontmatter___date}, limit: 3) {
       edges {
         node {
           id
