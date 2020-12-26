@@ -9,20 +9,21 @@ import {tokens} from "../../config/themes"
 
 
 const GardenCard =  styled.div`
-  height:200px;
+  height:150px;
   width:160px;
   background-color:white;
   display:flex;
-  justify-content:center;
+  // justify-content:center;
   align-items:center;
   margin:0 ${tokens.space[4]};
+  padding:${tokens.space[2]};
+  font-size:${tokens.fontSizes[3]};
 `;
 
 
 const IndexPage = ({
   data : { site, booksQuery, gardenQuery,drawingsQuery}
 }) => {
-  console.log(gardenQuery);
   return (
     <Layout>
       <SEO title="Blog" />
