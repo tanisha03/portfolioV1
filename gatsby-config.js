@@ -38,9 +38,9 @@ module.exports = {
       options: {
         extensions: ['.mdx', '.md', '.markdown'],
         defaultLayouts: {
-          Books: require.resolve("./src/components/Layout.js"),
-          Garden: require.resolve("./src/components/Layout.js"),
-          default: require.resolve("./src/components/Layout.js")
+          Books: require.resolve("./src/templates/book.js"),
+          Garden: require.resolve("./src/templates/garden.js"),
+          Drawings: require.resolve("./src/templates/drawing.js")
         },
         gatsbyRemarkPlugins: [
           {

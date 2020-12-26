@@ -41,7 +41,7 @@ const SectionContent=styled.div`
     }
 `;
 
-export default function SectionPartition({header,description,linkLabel,children}) {
+export default function SectionPartition({header,description,linkLabel, link, children}) {
     // console.log(props);
     return (
         <SectionWrapper>
@@ -51,7 +51,7 @@ export default function SectionPartition({header,description,linkLabel,children}
                 <div className="container">{children}</div>
             </SectionContent>
             <span>
-                <a href="#">{linkLabel}</a>
+                <a href={link}>{linkLabel}</a>
                 {/* <ArrowIcon/>             */}
                 {Icons['right_arrow']}
             </span>

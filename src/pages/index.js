@@ -22,6 +22,7 @@ const GardenCard =  styled.div`
 const IndexPage = ({
   data : { site, booksQuery, gardenQuery,drawingsQuery}
 }) => {
+  console.log(gardenQuery);
   return (
     <Layout>
       <SEO title="Blog" />
@@ -34,6 +35,7 @@ const IndexPage = ({
           description="A Software Engineer who talks about development, 
           design, products and everything at its intersection."
           linkLabel="Visit the Garden"
+          link="/garden"
           >
             <div>
               <div style={{display:"flex"}}>
@@ -54,6 +56,7 @@ const IndexPage = ({
           description="A Software Engineer who talks about development, 
           design, products and everything at its intersection."
           linkLabel="Browse the Book shelf"
+          link="/books"
           >
             <div>
               <div>
@@ -74,6 +77,7 @@ const IndexPage = ({
           description="A Software Engineer who talks about development, 
           design, products and everything at its intersection."
           linkLabel="Explore Code Drawings"
+          link="/drawings"
           >
             <div>
               <div>
@@ -130,7 +134,7 @@ export const pageQuery = graphql`
             slug
             cover {
               childImageSharp {
-                fluid(maxWidth: 160, maxHeight: 250) {
+                fluid(maxWidth: 160, maxHeight: 230) {
                   src
                 }
               }
