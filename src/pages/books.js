@@ -5,6 +5,22 @@ import {graphql, Link } from "gatsby";
 import styled from 'styled-components';
 import {tokens} from "../../config/themes"
 
+const BookContainer = styled.div`
+  margin:${tokens.space[4]};
+  img{
+    margin-bottom:${tokens.space[4]};
+  }
+  h2{
+    color:${tokens.colors.primary[0]};
+    font-weight:${tokens.fontWeights.medium};
+    margin-bottom:${tokens.space[2]};
+  }
+  h4{
+    color:${tokens.colors.primary[1]};
+    font-weight:${tokens.fontWeights.light}
+  }
+`;
+
 const BooksPage = ({
   data : { site, booksQuery}
 }) => (
@@ -16,10 +32,11 @@ const BooksPage = ({
     <div style={{padding:"4%", display:"flex"}}>
       {
         booksQuery.edges.map(item=>(
-          <div>
+          <BookContainer>
             <img src={item.node.frontmatter.cover.childImageSharp.fluid.src} />
-            <div>{item.node.frontmatter.title}</div>
-          </div>
+            <h2>{item.node.frontmatter.title}</h2>
+            <h4>{item.node.frontmatter.author}</h4>
+          </BookContainer>
         ))
       }
     </div>
@@ -43,9 +60,10 @@ export const pageQuery = graphql`
             title
             date
             slug
+            author
             cover {
               childImageSharp {
-                fluid(maxWidth: 200, maxHeight: 320) {
+                fluid(maxWidth: 250, maxHeight: 380) {
                   src
                 }
               }
