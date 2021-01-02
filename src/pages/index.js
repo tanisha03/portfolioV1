@@ -9,15 +9,17 @@ import {tokens} from "../../config/themes"
 
 
 const GardenCard =  styled.div`
-  height:150px;
-  width:160px;
+  height:60px;
+  width:100%;
   background-color:white;
   display:flex;
   // justify-content:center;
   align-items:center;
-  margin:0 ${tokens.space[4]};
+  margin-bottom:${tokens.space[1]};
   padding:${tokens.space[2]};
   font-size:${tokens.fontSizes[3]};
+  // box-shadow: 1px 1px 2px #1F1B24;
+  border-radius: ${tokens.space[2]};
 `;
 
 
@@ -33,13 +35,13 @@ const IndexPage = ({
     {/* Digital Garden  */}
       <SectionPartition 
           header="Digital Garden"
-          description="A Software Engineer who talks about development, 
-          design, products and everything at its intersection."
+          description="Loosely knit notes in and around everything that is processed in my mind."
           linkLabel="Visit the Garden"
           link="/garden"
+          direction="row"
           >
-            <div>
-              <div style={{display:"flex"}}>
+            {/* <div> */}
+              <div style={{display:"flex", flexDirection:"column", width:"60%"}}>
               {
                 gardenQuery && gardenQuery.edges.map(i=>(
                   <Link to={i.node.frontmatter.slug}>
@@ -48,14 +50,13 @@ const IndexPage = ({
                 ))
               }
               </div>
-            </div>
+            {/* </div> */}
         </SectionPartition>
 
       {/* Book Shelf */}
         <SectionPartition 
           header="Book Shelf"
-          description="A Software Engineer who talks about development, 
-          design, products and everything at its intersection."
+          description="My virtual study containing all the books that helped me give a new perspective."
           linkLabel="Browse the Book shelf"
           link="/books"
           >
@@ -75,8 +76,7 @@ const IndexPage = ({
         {/* Code Draw */}
         <SectionPartition 
           header="Code Drawings"
-          description="A Software Engineer who talks about development, 
-          design, products and everything at its intersection."
+          description="Explain code and concepts with figures and pictorial metaphors."
           linkLabel="Explore Code Drawings"
           link="/drawings"
           >

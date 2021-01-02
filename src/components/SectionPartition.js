@@ -6,7 +6,7 @@ import {Icons} from "../assets/icon"
 
 const SectionWrapper=styled.div`
     background-color:${tokens.colors.secondary[1]};
-    padding:${tokens.space[10]};
+    padding:${tokens.space[12]};
     h2{
         font-size:${tokens.fontSizes[6]};
         color:${tokens.colors.primary[0]};
@@ -26,27 +26,29 @@ const SectionWrapper=styled.div`
 
 const SectionContent=styled.div`
     display:flex;
-    align-items:center;
+    // align-items:center;
+    // flex-direction:${props => props.direction ? props.direction : 'column'};
     p{
+        margin-top:${tokens.space[2]};
         font-size:${tokens.fontSizes[4]};
         color:${tokens.colors.primary[0]};
         font-weight:${tokens.fontWeights[1]};
-        width:30%;
+        width:25%;
     }
     .container{
         width:60%;
         display:flex;
         justify-content:center;
         align-items:center;
+        // margin-left:${tokens.space[5]};
     }
 `;
 
-export default function SectionPartition({header,description,linkLabel, link, children}) {
-    // console.log(props);
+export default function SectionPartition({header,description,linkLabel, link, children, direction}) {
     return (
         <SectionWrapper>
             <h2>{header}</h2>
-            <SectionContent>
+            <SectionContent direction={direction}>
                 <p>{description}</p>
                 <div className="container">{children}</div>
             </SectionContent>

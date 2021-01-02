@@ -13,6 +13,7 @@ const Container = styled.div`
       text-decoration:none;
       color:${tokens.colors.tertiary[0]}
     }
+    min-height:70vh;
 `;
 
 
