@@ -64,7 +64,7 @@ const IndexPage = ({
               <div>
               {
                 booksQuery && booksQuery.edges.map(i=>(
-                  <Link to={i.node.frontmatter.slug}>
+                  <Link to={i.node.frontmatter.content ? i.node.frontmatter.content : i.node.frontmatter.link}>
                       <img src={i.node.frontmatter.cover.childImageSharp.fluid.src} style={{margin:`0 ${tokens.space[4]}`}}/>
                   </Link>
                 ))
@@ -114,6 +114,8 @@ export const pageQuery = graphql`
             title
             date
             slug
+            content 
+            link
             cover {
               childImageSharp {
                 fluid(maxWidth: 160, maxHeight: 250) {

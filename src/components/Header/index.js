@@ -26,7 +26,7 @@ const NavList = styled.ul`
 
 const Header = ({ siteTitle }) => (
   <NavHeader>
-      <span style={{color:"#3C3446",fontSize:"48px", fontWeight:"900"}}> {"T"} </span>
+      <Link to="/"><span style={{color:"#3C3446",fontSize:"48px", fontWeight:"900"}}> {"T"} </span></Link>
       <nav>
         <NavList>
           {

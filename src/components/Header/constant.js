@@ -14,11 +14,11 @@ export const LINKS = [
         label:'BookShelf',
         link:'/books'
     },
-    {
-        id:'work',
-        label:'Work',
-        link:'/work'
-    },
+    // {
+    //     id:'work',
+    //     label:'Work',
+    //     link:'/work'
+    // },
     {
         id:'about',
         label:'About',

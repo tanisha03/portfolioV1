@@ -4,6 +4,7 @@ import SEO from "../components/SEO"
 import {Heading} from "./shared"
 
 const GardenPage = ({children,pageContext}) => {
+  console.log(pageContext);
   return(
     <Layout>
       <SEO title="Garden" />
