@@ -5,15 +5,24 @@ import {graphql, Link } from "gatsby";
 import styled from 'styled-components';
 import {tokens} from "../../config/themes"
 
+const HeaderContainer =  styled.div`
+  padding:2% 4% 0;
+  p{
+    width:50%;
+    margin-top:${tokens.space[5]};
+  }
+`;
+
 const GardenCard =  styled.div`
   height:100px;
   width:250px;
   background-color:white;
   display:flex;
-  justify-content:center;
   align-items:center;
   margin:0 ${tokens.space[4]};
-  border:1px solid black;
+  padding:0 ${tokens.space[4]};
+  box-shadow: 0px 2px 3px #1F1B24;
+  color:${tokens.colors.primary[0]};
 `;
 
 const DigitalGardenPage = ({
@@ -21,15 +30,18 @@ const DigitalGardenPage = ({
 }) => (
   <Layout>
     <SEO title="Digital Garden" />
-    <center>
+    <HeaderContainer>
       <h1>Digital Garden</h1>
-    </center>
+      <p>A personal internet space containing my personal wiki of some loosly knit thoughts, ideas, learnings, and work. </p>
+    </HeaderContainer>
     <div style={{padding:"4%", display:"flex"}}>
       {
         gardenQuery.edges.map(item=>(
-          <GardenCard>
-            {item.node.frontmatter.title}
-          </GardenCard>
+          <Link to={item.node.frontmatter.slug}>
+            <GardenCard>
+              {item.node.frontmatter.title}
+            </GardenCard>
+          </Link>
         ))
       }
     </div>
