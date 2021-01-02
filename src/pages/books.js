@@ -33,7 +33,7 @@ const BooksPage = ({
       {
         booksQuery.edges.map(item=>(
           <BookContainer>
-            <img src={item.node.frontmatter.cover.childImageSharp.fluid.src} />
+            <Link to={item.node.frontmatter.link}><img src={item.node.frontmatter.cover.childImageSharp.fluid.src} /></Link>
             <h2>{item.node.frontmatter.title}</h2>
             <h4>{item.node.frontmatter.author}</h4>
           </BookContainer>
@@ -61,6 +61,7 @@ export const pageQuery = graphql`
             date
             slug
             author
+            link
             cover {
               childImageSharp {
                 fluid(maxWidth: 250, maxHeight: 380) {
