@@ -16,12 +16,14 @@ const HeaderContainer =  styled.div`
 const GardenCard =  styled.div`
   height:100px;
   width:250px;
-  background-color:white;
+  background-color:#FCFBFE;
   display:flex;
   align-items:center;
   margin:0 ${tokens.space[4]};
   padding:0 ${tokens.space[4]};
-  box-shadow: 0px 2px 3px #1F1B24;
+  // box-shadow: 0.2px 1.5px 2px #1F1B24;
+  border: 2px solid #F3F1F7;
+  border-radius: 2px;
   color:${tokens.colors.primary[0]};
 `;
 
