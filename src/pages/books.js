@@ -9,6 +9,11 @@ const BookContainer = styled.div`
   margin:${tokens.space[4]};
   img{
     margin-bottom:${tokens.space[4]};
+    box-shadow: 0 0 2px rgba(33,33,33,.2);
+    transition: box-shadow .5s ease-in-out;
+    &:hover{
+        box-shadow: 0 0 10px rgba(33,33,33,.2); 
+    }
   }
   h2{
     color:${tokens.colors.primary[0]};
