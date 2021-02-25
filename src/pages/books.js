@@ -33,7 +33,7 @@ const BooksPage = ({
       {
         booksQuery.edges.map(item=>(
           <BookContainer>
-            <Link to={item.node.frontmatter.link}><img src={item.node.frontmatter.cover.childImageSharp.fluid.src} /></Link>
+            <Link to={item.node.frontmatter.link}><img src={item.node.frontmatter.cover.childImageSharp.fluid.src} alt={item.node.frontmatter.title}/></Link>
             <h2>{item.node.frontmatter.title}</h2>
             <h4>{item.node.frontmatter.author}</h4>
           </BookContainer>

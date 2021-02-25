@@ -1,9 +1,8 @@
 import React from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
-import {graphql, Link } from "gatsby";
-import styled from 'styled-components';
-import {tokens} from "../../config/themes"
+import {graphql } from "gatsby";
+
 
 const CodeDrawingsPage = ({
   data : { site, drawingsQuery}
@@ -17,7 +16,7 @@ const CodeDrawingsPage = ({
       {
         drawingsQuery.edges.map(item=>(
           <div>
-            <img src={item.node.frontmatter.cover.childImageSharp.fluid.src} />
+            <img src={item.node.frontmatter.cover.childImageSharp.fluid.src} alt={item.node.frontmatter.title}/>
             <div>{item.node.frontmatter.title}</div>
           </div>
         ))

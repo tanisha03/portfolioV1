@@ -70,7 +70,7 @@ const IndexPage = ({
               {
                 booksQuery && booksQuery.edges.map(i=>(
                   <Link to={i.node.frontmatter.content ? i.node.frontmatter.content : i.node.frontmatter.link}>
-                      <img src={i.node.frontmatter.cover.childImageSharp.fluid.src} style={{margin:`0 ${tokens.space[4]}`}}/>
+                      <img src={i.node.frontmatter.cover.childImageSharp.fluid.src} style={{margin:`0 ${tokens.space[4]}`}} alt={i.node.frontmatter.title}/>
                   </Link>
                 ))
               }
@@ -90,7 +90,7 @@ const IndexPage = ({
               {
                 drawingsQuery && drawingsQuery.edges.map(i=>(
                   <Link to={i.node.frontmatter.slug}>
-                      <img src={i.node.frontmatter.cover.childImageSharp.fluid.src} style={{margin:`0 ${tokens.space[4]}`}}/>
+                      <img src={i.node.frontmatter.cover.childImageSharp.fluid.src} style={{margin:`0 ${tokens.space[4]}`}} alt={i.node.frontmatter.title}/>
                   </Link>
                 ))
               }

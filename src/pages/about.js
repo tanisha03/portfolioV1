@@ -57,7 +57,7 @@ const AboutPage = () => {
                     Download Resume {Icons.download}
                 </DownloadLink>
             </div>
-            <img src={ProfilePicture} alt="profile picture of Tanisha Sabherwal" />
+            <img src={ProfilePicture} alt="profile of Tanisha Sabherwal" />
         </AboutSection>
     </Layout>
   );
