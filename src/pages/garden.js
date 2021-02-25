@@ -22,9 +22,16 @@ const GardenCard =  styled.div`
   margin:0 ${tokens.space[4]};
   padding:0 ${tokens.space[4]};
   // box-shadow: 0.2px 1.5px 2px #1F1B24;
-  border: 2px solid #F3F1F7;
+  // border: 2px solid #F3F1F7;
   border-radius: 2px;
   color:${tokens.colors.primary[0]};
+  box-shadow: 0 0 2px rgba(33,33,33,.2);
+  border-bottom:0;
+  transition: all .8s ease-in-out;
+  &:hover{
+      box-shadow: 0 0 6px rgba(33,33,33,.2); 
+      border-bottom: 1px solid ${tokens.colors.primary[0]};
+  }
 `;
 
 const DigitalGardenPage = ({
