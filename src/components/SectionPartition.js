@@ -15,12 +15,26 @@ const SectionWrapper=styled.div`
         display:flex;
         align-items:center;
         justify-content:flex-end;
+        a{
+            border-bottom:1px solid ${tokens.colors.secondary[4]};
+            transition: padding-bottom .3s;
+            &:hover{
+                padding-bottom:${tokens.space[1]};
+            }
+        }
     }
     a{
         text-decoration:none;
         font-size:${tokens.fontSizes[5]};
         color:${tokens.colors.tertiary[0]};
         font-weight:${tokens.fontWeights[1]};
+    }
+    img{
+        box-shadow: 0 0 2px rgba(33,33,33,.2);
+        transition: box-shadow .5s ease-in-out;
+        &:hover{
+            box-shadow: 0 0 10px rgba(33,33,33,.2); 
+        }
     }
 `;
 
