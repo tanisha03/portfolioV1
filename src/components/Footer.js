@@ -23,8 +23,6 @@ const LINKS=[
     }
 ];
 
-console.log(Icons);
-
 const FooterContainer = styled.div`
     font-family:${tokens.font.primary};
     font-size:${tokens.fontSizes[3]};
