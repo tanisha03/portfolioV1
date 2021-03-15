@@ -40,6 +40,12 @@ const FooterContainer = styled.div`
             padding: 0 ${tokens.space[4]};
         }
     }
+    @media only screen and (max-width: 768px) {
+        padding:${tokens.space[16]} ${tokens.space[2]} ${tokens.space[8]};
+        div a{
+            padding: 0 ${tokens.space[1]};
+        }
+    }
 `;
 
 export default function Footer() {
