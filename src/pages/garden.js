@@ -6,11 +6,42 @@ import styled from 'styled-components';
 import {tokens} from "../../config/themes"
 
 const HeaderContainer =  styled.div`
-  padding:2% 4% 0;
+  padding:8% 4%;
+  width:100%;
   p{
     width:50%;
     margin-top:${tokens.space[5]};
   }
+  @media only screen and (max-width: 768px) {
+       p{
+        width:80%;
+       }
+    }
+    @media only screen and (max-width: 576px) {
+      p{
+       width:100%;
+      }
+   }
+`;
+
+const GardenContainer =  styled.div`
+  // width:100%;
+  padding:4%;
+  display:flex;
+  flex-wrap:wrap;
+  div{
+    margin:${tokens.space[4]};
+  }
+  @media only screen and (max-width: 576px) {
+    // padding:8%;
+    a{
+      width:100%;
+      div{
+        width:100%;
+        margin:${tokens.space[4]} 0;
+      }
+    }
+}
 `;
 
 const GardenCard =  styled.div`
@@ -19,8 +50,7 @@ const GardenCard =  styled.div`
   background-color:#FCFBFE;
   display:flex;
   align-items:center;
-  margin:0 ${tokens.space[4]};
-  padding:0 ${tokens.space[4]};
+  padding:${tokens.space[4]};
   // box-shadow: 0.2px 1.5px 2px #1F1B24;
   // border: 2px solid #F3F1F7;
   border-radius: 2px;
@@ -39,21 +69,23 @@ const DigitalGardenPage = ({
 }) => (
   <Layout>
     <SEO title="Digital Garden" />
-    <HeaderContainer>
-      <h1>Digital Garden</h1>
-      <p>A personal internet space containing my personal wiki of some loosly knit thoughts, ideas, learnings, and work. </p>
-    </HeaderContainer>
-    <div style={{padding:"4%", display:"flex"}}>
-      {
-        gardenQuery.edges.map(item=>(
-          <Link to={item.node.frontmatter.slug}>
-            <GardenCard>
-              {item.node.frontmatter.title}
-            </GardenCard>
-          </Link>
-        ))
-      }
-    </div>
+    {/* <div style={{width:"100%"}}> */}
+      <HeaderContainer>
+        <h1>Digital Garden</h1>
+        <p>A personal internet space containing my personal wiki of some loosly knit thoughts, ideas, learnings, and work. </p>
+      </HeaderContainer>
+      <GardenContainer>
+        {
+          gardenQuery.edges.map(item=>(
+            <Link to={item.node.frontmatter.slug}>
+              <GardenCard>
+                {item.node.frontmatter.title}
+              </GardenCard>
+            </Link>
+          ))
+        }
+      </GardenContainer>
+    {/* </div> */}
   </Layout>
 )
 
