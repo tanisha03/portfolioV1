@@ -11,6 +11,11 @@ const NavHeader = styled.header`
   align-items:center;
   padding:${tokens.space[8]};
   font-family: ${tokens.font.primary};
+  width:100%;
+
+  @media only screen and (max-width: 576px) {
+    padding:${tokens.space[2]};
+  }
 `;
 
 const NavList = styled.ul`
@@ -21,7 +26,12 @@ const NavList = styled.ul`
     margin: 0 ${tokens.space[4]};
     color:${tokens.colors.primary[1]};
     font-size:${tokens.fontSizes[4]};
-  }
+
+    @media only screen and (max-width: 576px) {
+      font-size:${tokens.fontSizes[2]};
+      margin: 0 ${tokens.space[2]};
+    }
+  } 
 `;
 
 const Header = ({ siteTitle }) => (

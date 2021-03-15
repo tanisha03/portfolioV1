@@ -32,6 +32,23 @@ const HeroContainer = styled.div`
         padding: ${tokens.space[8]};
         width:50%;
         text-align:center;
+        @media only screen and (max-width: 768px) {
+            width:70%;
+        }
+        @media only screen and (max-width: 576px) {
+            width:70%;
+        }
+    }
+    @media only screen and (max-width: 992px) {
+        padding:${tokens.space[10]};
+    }
+    @media only screen and (max-width: 768px) {
+        padding:${tokens.space[8]};
+        font-size:${tokens.fontSizes[4]};
+    }
+    @media only screen and (max-width: 576px) {
+        padding:${tokens.space[4]};
+        font-size:${tokens.fontSizes[2]};
     }
 `;
 
