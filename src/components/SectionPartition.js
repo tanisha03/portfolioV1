@@ -40,8 +40,6 @@ const SectionWrapper=styled.div`
 
 const SectionContent=styled.div`
     display:flex;
-    // align-items:center;
-    // flex-direction:${props => props.direction ? props.direction : 'column'};
     p{
         margin-top:${tokens.space[2]};
         font-size:${tokens.fontSizes[4]};
@@ -55,6 +53,23 @@ const SectionContent=styled.div`
         justify-content:center;
         align-items:center;
         // margin-left:${tokens.space[5]};
+    }
+    @media only screen and (max-width: 768px) {
+        .container{
+            width:70%;   
+        }
+    }
+    @media only screen and (max-width: 576px) {
+        flex-direction:column;
+        p{
+            width:100%;  
+            margin-bottom:${tokens.space[4]};
+        }
+        .container{
+            flex-direction:column;
+            width:100%;
+            align-items:start;
+        }
     }
 `;
 
