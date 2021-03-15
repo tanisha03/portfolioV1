@@ -32,10 +32,8 @@ const AboutSection=styled.div`
     }
     @media only screen and (max-width: 768px) {
         flex-direction:column;
-        // padding:${tokens.space[8]};
         div,img{
             width:70%
-            // margin-top:${tokens.space[8]};
         }
         img{
             margin-top:${tokens.space[8]};

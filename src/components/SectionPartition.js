@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
 import {tokens} from "../../config/themes"
-// import ArrowIcon from '../assets/icons/right-arrow.svg';
 import {Icons} from "../assets/icon"
 
 const SectionWrapper=styled.div`
@@ -58,12 +57,6 @@ const SectionContent=styled.div`
             margin:${tokens.space[2]};
         }
     }
-    // @media only screen and (max-width: 768px) {
-    //     flex-direction:column;
-    //     .container{
-    //         width:70%;   
-    //     }
-    // }
     @media only screen and (max-width: 768px) {
         flex-direction:column;
         .container{

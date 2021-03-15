@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import {tokens} from "../../config/themes"
 
 const HeaderContainer =  styled.div`
-  padding:8% 4%;
+  padding:8% 4% 0 4%;
   width:100%;
   p{
     width:50%;
@@ -25,7 +25,6 @@ const HeaderContainer =  styled.div`
 `;
 
 const GardenContainer =  styled.div`
-  // width:100%;
   padding:4%;
   display:flex;
   flex-wrap:wrap;
@@ -33,7 +32,6 @@ const GardenContainer =  styled.div`
     margin:${tokens.space[4]};
   }
   @media only screen and (max-width: 576px) {
-    // padding:8%;
     a{
       width:100%;
       div{
@@ -51,8 +49,6 @@ const GardenCard =  styled.div`
   display:flex;
   align-items:center;
   padding:${tokens.space[4]};
-  // box-shadow: 0.2px 1.5px 2px #1F1B24;
-  // border: 2px solid #F3F1F7;
   border-radius: 2px;
   color:${tokens.colors.primary[0]};
   box-shadow: 0 0 2px rgba(33,33,33,.2);
