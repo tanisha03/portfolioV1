@@ -5,6 +5,20 @@ import {graphql, Link } from "gatsby";
 import styled from 'styled-components';
 import {tokens} from "../../config/themes"
 
+const BookWrapper = styled.div`
+  padding:4%;
+  display:flex;
+  flex-wrap:wrap;
+  @media only screen and (max-width: 576px) {
+    div{
+     width:100%;
+     img{
+       width:100%;
+     }
+    }
+ }
+`;
+
 const BookContainer = styled.div`
   margin:${tokens.space[4]};
   img{
@@ -34,7 +48,7 @@ const BooksPage = ({
     <center>
       <h1>Books</h1>
     </center>
-    <div style={{padding:"4%", display:"flex"}}>
+    <BookWrapper>
       {
         booksQuery.edges.map(item=>(
           <BookContainer>
@@ -44,7 +58,7 @@ const BooksPage = ({
           </BookContainer>
         ))
       }
-    </div>
+    </BookWrapper>
   </Layout>
 )
 
