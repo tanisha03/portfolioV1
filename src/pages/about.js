@@ -12,6 +12,7 @@ const AboutSection=styled.div`
     align-items:center;
     padding:${tokens.space[8]} 0;
     color:${tokens.colors.primary[0]};
+    width:100%;
     div{
         width:30%;
         margin-right:5%;
@@ -28,6 +29,17 @@ const AboutSection=styled.div`
     img{
         width:25%;
         box-shadow: 6px 6px 0 0 white, 6px 6px 0 2px ${tokens.colors.primary[1]};
+    }
+    @media only screen and (max-width: 768px) {
+        flex-direction:column;
+        // padding:${tokens.space[8]};
+        div,img{
+            width:70%
+            // margin-top:${tokens.space[8]};
+        }
+        img{
+            margin-top:${tokens.space[8]};
+        }
     }
 `;
 
