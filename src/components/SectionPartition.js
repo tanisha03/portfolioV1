@@ -40,6 +40,7 @@ const SectionWrapper=styled.div`
 
 const SectionContent=styled.div`
     display:flex;
+    margin-bottom:${tokens.space[4]};
     p{
         margin-top:${tokens.space[2]};
         font-size:${tokens.fontSizes[4]};
@@ -57,13 +58,17 @@ const SectionContent=styled.div`
             margin:${tokens.space[2]};
         }
     }
+    // @media only screen and (max-width: 768px) {
+    //     flex-direction:column;
+    //     .container{
+    //         width:70%;   
+    //     }
+    // }
     @media only screen and (max-width: 768px) {
+        flex-direction:column;
         .container{
             width:70%;   
         }
-    }
-    @media only screen and (max-width: 576px) {
-        flex-direction:column;
         p{
             width:100%;  
             margin-bottom:${tokens.space[4]};
@@ -73,6 +78,14 @@ const SectionContent=styled.div`
             width:100%;
             align-items:start;
         }
+    }
+    @media only screen and (max-width: 576px) {
+            .container{
+                a img{
+                    margin:${tokens.space[0]};
+                    width:100%; 
+                }  
+            }
     }
 `;
 
