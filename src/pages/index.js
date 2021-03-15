@@ -8,6 +8,18 @@ import styled from 'styled-components';
 import {tokens} from "../../config/themes"
 
 
+const GardenWrapper =  styled.div`
+  display:flex;
+  flex-direction:column;
+  width:70%;
+  @media only screen and (max-width: 768px) {
+    width:80%;
+  }
+  @media only screen and (max-width: 576px) {
+    margin-bottom:${tokens.space[4]};
+  }
+`;
+
 const GardenCard =  styled.div`
   height:60px;
   width:100%;
@@ -24,6 +36,9 @@ const GardenCard =  styled.div`
   transition: box-shadow .5s ease-in-out;
   &:hover{
       box-shadow: 0 0 10px rgba(33,33,33,.2); 
+  }
+  @media only screen and (max-width: 576px) {
+    padding:${tokens.space[4]};
   }
 `;
 
@@ -46,7 +61,7 @@ const IndexPage = ({
           direction="row"
           >
             {/* <div> */}
-              <div style={{display:"flex", flexDirection:"column", width:"60%"}}>
+              <GardenWrapper>
               {
                 gardenQuery && gardenQuery.edges.map(i=>(
                   <Link to={i.node.frontmatter.slug}>
@@ -54,7 +69,7 @@ const IndexPage = ({
                   </Link>
                 ))
               }
-              </div>
+              </GardenWrapper>
             {/* </div> */}
         </SectionPartition>
 
@@ -70,7 +85,7 @@ const IndexPage = ({
               {
                 booksQuery && booksQuery.edges.map(i=>(
                   <Link to={i.node.frontmatter.content ? i.node.frontmatter.content : i.node.frontmatter.link}>
-                      <img src={i.node.frontmatter.cover.childImageSharp.fluid.src} style={{margin:`0 ${tokens.space[4]}`}} alt={i.node.frontmatter.title}/>
+                      <img src={i.node.frontmatter.cover.childImageSharp.fluid.src} alt={i.node.frontmatter.title}/>
                   </Link>
                 ))
               }
@@ -90,7 +105,7 @@ const IndexPage = ({
               {
                 drawingsQuery && drawingsQuery.edges.map(i=>(
                   <Link to={i.node.frontmatter.slug}>
-                      <img src={i.node.frontmatter.cover.childImageSharp.fluid.src} style={{margin:`0 ${tokens.space[4]}`}} alt={i.node.frontmatter.title}/>
+                      <img src={i.node.frontmatter.cover.childImageSharp.fluid.src} alt={i.node.frontmatter.title}/>
                   </Link>
                 ))
               }

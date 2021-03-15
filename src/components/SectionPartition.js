@@ -53,6 +53,9 @@ const SectionContent=styled.div`
         justify-content:center;
         align-items:center;
         // margin-left:${tokens.space[5]};
+        a img{
+            margin:${tokens.space[2]};
+        }
     }
     @media only screen and (max-width: 768px) {
         .container{
