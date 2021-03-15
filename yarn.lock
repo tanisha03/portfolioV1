@@ -1022,6 +1022,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.12.5":
+  version "7.13.10"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.13.10.tgz#47d42a57b6095f4468da440388fdbad8bebf0d7d"
+  integrity sha512-4QPkjJq6Ns3V/RgpEahRk+AGfL0eO6RHHtTWoNNr5mO49G6B5+X6d6THgWEAvTrznU5xYpbAlVKRYcsCgh/Akw==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/standalone@^7.11.6":
   version "7.12.4"
   resolved "https://registry.yarnpkg.com/@babel/standalone/-/standalone-7.12.4.tgz#1493960e765308cc06e9a75ba1affbe65a11124b"
@@ -2772,6 +2779,16 @@ babel-plugin-remove-graphql-queries@^2.9.20:
   version "1.11.1"
   resolved "https://registry.yarnpkg.com/babel-plugin-styled-components/-/babel-plugin-styled-components-1.11.1.tgz#5296a9e557d736c3186be079fff27c6665d63d76"
   integrity sha512-YwrInHyKUk1PU3avIRdiLyCpM++18Rs1NgyMXEAQC33rIXs/vro0A+stf4sT0Gf22Got+xRWB8Cm0tw+qkRzBA==
+  dependencies:
+    "@babel/helper-annotate-as-pure" "^7.0.0"
+    "@babel/helper-module-imports" "^7.0.0"
+    babel-plugin-syntax-jsx "^6.18.0"
+    lodash "^4.17.11"
+
+babel-plugin-styled-components@^1.12.0:
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-styled-components/-/babel-plugin-styled-components-1.12.0.tgz#1dec1676512177de6b827211e9eda5a30db4f9b9"
+  integrity sha512-FEiD7l5ZABdJPpLssKXjBUJMYqzbcNzBowfXDCdJhOpbhWiewapUaY+LZGT8R4Jg2TwOjGjG4RKeyrO5p9sBkA==
   dependencies:
     "@babel/helper-annotate-as-pure" "^7.0.0"
     "@babel/helper-module-imports" "^7.0.0"
@@ -6550,6 +6567,13 @@ gatsby-plugin-sharp@^2.4.3:
     sharp "^0.25.4"
     svgo "1.3.2"
     uuid "3.4.0"
+
+gatsby-plugin-styled-components@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-styled-components/-/gatsby-plugin-styled-components-4.0.0.tgz#eea171e85b5b3b7c0554c62178c09714fea29981"
+  integrity sha512-wV33OxkQTqS7Tw8Nez7XT+Sf9FnvNVqOYzGPZKFlApUjBJvBen2D/kDJCEUlwHA3164s6mqp/Qq/80lup3V6Yg==
+  dependencies:
+    "@babel/runtime" "^7.12.5"
 
 gatsby-plugin-typescript@^2.4.25:
   version "2.4.25"
