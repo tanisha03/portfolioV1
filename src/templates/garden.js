@@ -2,12 +2,13 @@ import React from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import {Heading} from "./shared"
+import ShareCard from "./shared/ShareCard"
 
 const GardenPage = ({children,pageContext}) => {
   return(
     <Layout>
       <SEO title="Garden" />
-      <div style={{padding:"4% 10%"}}>
+      <div style={{padding:"4% 8%", width:"100%"}}>
         <Heading>
           <h1>{pageContext?.frontmatter?.title}</h1>
           <div className="header-wrapper">
@@ -19,6 +20,9 @@ const GardenPage = ({children,pageContext}) => {
           </div>
         </Heading>
         {children}
+        <ShareCard 
+          link={`http://twitter.com/intent/tweet?text=${pageContext?.frontmatter?.title}&url=http://tanishasabherwal.netlify.app${pageContext?.frontmatter?.slug}&via=tanishaaa03`}
+        />
       </div>
     </Layout>
 )};
