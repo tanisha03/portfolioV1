@@ -77,7 +77,7 @@ export const pageQuery = graphql`
           id
           frontmatter {
             title
-            date
+            date(formatString: "MMMM DD, YYYY")
             slug
             author
             link
