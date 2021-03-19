@@ -92,7 +92,7 @@ const IndexPage = ({
         </SectionPartition>
 
         {/* Code Draw */}
-        <SectionPartition 
+        {/* <SectionPartition 
           header="Code Drawings"
           description="Explain code and concepts with figures and pictorial metaphors."
           linkLabel="Explore Code Drawings"
@@ -109,7 +109,7 @@ const IndexPage = ({
               }
               </div>
             </div>
-        </SectionPartition>
+        </SectionPartition> */}
       </div>
     </Layout>
   );
