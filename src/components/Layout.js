@@ -36,7 +36,13 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
       <Container>
-          <main>{children}</main>
+          <main
+            data-sal="slide-down"
+            data-sal-duration="1000"
+            data-sal-delay="200"
+            data-sal-easing="ease-out">
+            {children}
+          </main>
       </Container>
       <Footer />
     </>
