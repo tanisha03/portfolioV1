@@ -15,7 +15,7 @@ export const Heading = styled.div`
   .header-wrapper{
     display:flex;
     justify-content:space-between;
-    width:100%;
+    width:95%;
     color:${tokens.colors.primary[1]};
     span{
       margin: 0 ${tokens.space[1]};

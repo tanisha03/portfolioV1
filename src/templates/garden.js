@@ -19,6 +19,7 @@ const GardenPage = ({children,pageContext}) => {
             </div>
           </div>
         </Heading>
+        {/* <div style={{width:"100%"}}>{children}</div> */}
         {children}
         <ShareCard 
           link={`http://twitter.com/intent/tweet?text=${pageContext?.frontmatter?.title}&url=http://tanishasabherwal.netlify.app${pageContext?.frontmatter?.slug}&via=tanishaaa03`}

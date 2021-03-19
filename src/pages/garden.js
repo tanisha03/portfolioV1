@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import {tokens} from "../../config/themes"
 
 const HeaderContainer =  styled.div`
-  padding:8% 4% 0 4%;
+  padding:4% 4% 0 4%;
   width:100%;
   p{
     width:50%;

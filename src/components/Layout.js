@@ -13,7 +13,7 @@ const Container = styled.div`
       text-decoration:none;
       color:${tokens.colors.tertiary[0]}
     }
-    width:100vw;
+    width:100%;
     min-height:70vh;
     main{
       width:100%;
