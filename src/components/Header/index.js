@@ -13,6 +13,13 @@ const NavHeader = styled.header`
   font-family: ${tokens.font.primary};
   width:100%;
 
+  svg {
+    transition:transform 0.2s ease;
+    &:hover{
+      transform: scale(1.2);
+    }
+  }
+
   @media only screen and (max-width: 576px) {
     padding:${tokens.space[2]};
   }
@@ -26,6 +33,15 @@ const NavList = styled.ul`
     margin: 0 ${tokens.space[4]};
     color:${tokens.colors.primary[1]};
     font-size:${tokens.fontSizes[4]};
+    transition:color 0.4s linear;
+
+    .active{
+      color:${tokens.colors.tertiary[0]};
+    }
+
+    &:hover{
+      color:${tokens.colors.tertiary[0]};
+    }
 
     @media only screen and (max-width: 576px) {
       font-size:${tokens.fontSizes[2]};
