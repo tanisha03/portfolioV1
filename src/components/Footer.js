@@ -57,7 +57,7 @@ export default function Footer() {
             <div>
                 {
                    LINKS.map(link=>(
-                       <Link to={link.link}>
+                       <Link to={link.link} aria-label={link.icon} target="_blank" rel="noopener">
                            {Icons?.social[link.icon]}
                        </Link>
                    )) 

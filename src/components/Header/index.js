@@ -35,10 +35,6 @@ const NavList = styled.ul`
     font-size:${tokens.fontSizes[4]};
     transition:color 0.4s linear;
 
-    .active{
-      color:${tokens.colors.tertiary[0]};
-    }
-
     &:hover{
       color:${tokens.colors.tertiary[0]};
     }
@@ -52,7 +48,7 @@ const NavList = styled.ul`
 
 const Header = ({ siteTitle }) => (
   <NavHeader>
-      <Link to="/">
+      <Link to="/" aria-label="Tanisha Sabherwal Logo">
         {/* <span style={{color:"#3C3446",fontSize:"48px", fontWeight:"900"}}> {"T"} </span> */}
         <svg width="40" height="40" viewBox="0 0 281 219" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M78.5 211.5V40H18.5L7 5H254L243 40C220.333 36.1667 174.5 32.5 174.5 55.5C174.5 78.5 201.5 88.5 201.5 88.5C201.5 88.5 276 111.5 276 155.479C276 205.639 230.5 218.5 179.5 211.5" stroke="black" stroke-width="10"/>
