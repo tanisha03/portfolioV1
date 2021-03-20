@@ -1,11 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import Header from "./Header/index.js";
 import Footer from "./Footer";
 import "./index.css";
 import {tokens} from "../../config/themes"
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+`;
+
 
 const Container = styled.div`
     font-family:${tokens.font.primary};
@@ -18,6 +29,10 @@ const Container = styled.div`
     main{
       width:100%;
     }
+`;
+
+const Main =styled.main`
+animation: ${fadeIn} 1s linear;
 `;
 
 
@@ -36,13 +51,9 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
       <Container>
-          <main
-            data-sal="slide-down"
-            data-sal-duration="1000"
-            data-sal-delay="200"
-            data-sal-easing="ease-out">
+          <Main>
             {children}
-          </main>
+          </Main>
       </Container>
       <Footer />
     </>
