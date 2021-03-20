@@ -1,6 +1,15 @@
-import React from 'react'
+import React,{useState} from "react";
 import styled from 'styled-components';
-import {tokens} from "../../config/themes"
+import {tokens} from "../../config/themes";
+import {Icons} from "../assets/icon"
+
+const DESCRIPTION = [
+    'loves to explore',
+    'plays with colors',
+    'is crazy',
+    'loves to sleep',
+    'reads random things'
+];
 
 const HeroContainer = styled.div`
     padding:${tokens.space[16]};
@@ -25,6 +34,7 @@ const HeroContainer = styled.div`
         color:${tokens.colors.primary[1]};
         font-size:${tokens.fontSizes[8]};
         width: fit-content;
+        text-align:center;
     }
     .bio{
         color:${tokens.colors.primary[0]};
@@ -49,12 +59,31 @@ const HeroContainer = styled.div`
     }
 `;
 
+const IconWrapper = styled.div`
+    cursor:pointer;
+    margin-top:${tokens.space[4]};
+
+    svg:active{
+        transition:transform 0.2s linear;
+        transform: rotate(360deg);
+    }
+`;
+
 export default function Hero() {
+    const [desc, setDesc] = useState(0);
+    const handleClick = () => {
+        const min = 0;
+        const max = DESCRIPTION.length;
+        const rand = parseInt(min + Math.random() * (max - min));
+        console.log(rand);
+        setDesc(rand);
+    }
     return (
         <HeroContainer>
             <div className="first-name">Tanisha</div>
             <div className="last-name">Sabherwal</div>
-            <div className="desc">loves to explore</div>
+            <div className="desc">{DESCRIPTION[desc]}</div>
+            <IconWrapper onClick={handleClick}>{Icons['refresh']}</IconWrapper>
             <p className="bio">A Software Engineer who talks about development, 
 design, products and everything at its intersection.</p>
         </HeroContainer>

@@ -46,7 +46,8 @@ const NavList = styled.ul`
   } 
 `;
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle }) => {
+  return(
   <NavHeader>
       <Link to="/" aria-label="Tanisha Sabherwal Logo">
         {/* <span style={{color:"#3C3446",fontSize:"48px", fontWeight:"900"}}> {"T"} </span> */}
@@ -66,7 +67,7 @@ const Header = ({ siteTitle }) => (
         </NavList>
     </nav>
   </NavHeader>
-);
+)}
 
 Header.propTypes = {
   siteTitle: PropTypes.string
