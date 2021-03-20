@@ -34,9 +34,15 @@ const FooterContainer = styled.div`
     div{
         display:flex;
         a{
-            padding: 0 ${tokens.space[4]};
+            padding: 0 ${tokens.space[2]};
         }
     }
+    svg {
+        transition:fill 0.2s linear;
+        &:hover{
+          fill:${tokens.colors.tertiary[0]};
+        }
+      }
     @media only screen and (max-width: 768px) {
         padding:${tokens.space[16]} ${tokens.space[2]} ${tokens.space[8]};
         div a{
