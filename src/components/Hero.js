@@ -76,7 +76,7 @@ export default function Hero() {
         const max = DESCRIPTION.length;
         const rand = parseInt(min + Math.random() * (max - min));
         if(rand===desc){
-            setDesc(rand+1);
+            setDesc((rand+1)%DESCRIPTION.length);
             return;
         }
         setDesc(rand);
