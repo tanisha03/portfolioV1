@@ -75,7 +75,10 @@ export default function Hero() {
         const min = 0;
         const max = DESCRIPTION.length;
         const rand = parseInt(min + Math.random() * (max - min));
-        console.log(rand);
+        if(rand===desc){
+            setDesc(rand+1);
+            return;
+        }
         setDesc(rand);
     }
     return (
