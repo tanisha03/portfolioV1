@@ -7,7 +7,7 @@ const DESCRIPTION = [
     'loves to explore',
     'plays with colors',
     'is crazy',
-    'loves to sleep',
+    'makes and breaks',
     'reads random things'
 ];
 
