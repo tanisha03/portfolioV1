@@ -6,7 +6,7 @@ import {Icons} from "../assets/icon"
 const DESCRIPTION = [
     'loves to explore',
     'plays with colors',
-    'is crazy',
+    'has crazy ideas',
     'makes and breaks',
     'reads random things'
 ];
