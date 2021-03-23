@@ -88,8 +88,26 @@ export const tokens = {
             1:'#F4F1F7'
         },
         tertiary:{
-            0:'#3568cf'
+            0:'#3568cf',
+            1:'#498a45'
         }
+    },
+
+    terms: {
+      garden:{
+        L1:{
+          label:'Sapling',
+          icon:'🌱',
+        },
+        L2:{
+          label:'Flowering',
+          icon:'🌷',
+        },
+        L3:{
+          label:'Evergreen',
+          icon:'🌳',
+        }
+      }
     }
 };
   

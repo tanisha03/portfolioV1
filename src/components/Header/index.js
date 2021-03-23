@@ -33,7 +33,7 @@ const NavList = styled.ul`
     margin: 0 ${tokens.space[4]};
     color:${tokens.colors.primary[1]};
     font-size:${tokens.fontSizes[4]};
-    transition:color 0.4s linear;
+    transition:color 0.1s linear;
 
     &:hover{
       color:${tokens.colors.tertiary[0]};

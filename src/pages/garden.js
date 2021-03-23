@@ -43,25 +43,39 @@ const GardenContainer =  styled.div`
 `;
 
 const GardenCard =  styled.div`
-  height:100px;
-  width:250px;
+  height:130px;
+  width:300px;
   background-color:#FCFBFE;
   display:flex;
-  align-items:center;
-  padding:${tokens.space[4]};
+  justify-content:space-between;
+  // align-items:center;
+  flex-direction:column;
+  font-weight:${tokens.fontWeights.semibold};
+
+  padding:${tokens.space[2]};
   border-radius: 2px;
-  color:${tokens.colors.primary[0]};
+  color:${tokens.colors.primary[1]};
   box-shadow: 0 0 2px rgba(33,33,33,.2);
   border-bottom:0;
-  transition: all .8s ease-in-out;
+  transition: all .4s ease-in-out;
   &:hover{
       box-shadow: 0 0 6px rgba(33,33,33,.2); 
       border-bottom: 1px solid ${tokens.colors.primary[0]};
   }
+
+  .footer_notes{
+    font-size:${tokens.fontSizes[2]};
+    font-weight:${tokens.fontWeights.medium};
+    display:flex;
+    justify-content:space-between;
+    .level{
+      color:${tokens.colors.tertiary[1]}
+    }
+  }
 `;
 
 const DigitalGardenPage = ({
-  data : { site, gardenQuery}
+  data : { gardenQuery}
 }) => (
   <Layout>
     <SEO title="Digital Garden" />
@@ -75,7 +89,11 @@ const DigitalGardenPage = ({
           gardenQuery.edges.map(item=>(
             <Link to={item.node.frontmatter.slug}>
               <GardenCard>
-                {item.node.frontmatter.title}
+                <div>{item.node.frontmatter.title}</div>
+                <div className="footer_notes">
+                  <span>{item.node.frontmatter.date}</span>
+                  <span className="level">{tokens.terms.garden[item.node.frontmatter.growthStage].label} {tokens.terms.garden[item.node.frontmatter.growthStage].icon}</span>
+                </div>
               </GardenCard>
             </Link>
           ))
@@ -100,8 +118,9 @@ export const pageQuery = graphql`
           id
           frontmatter {
             title
-            date
+            date(formatString: "MMM DD, YYYY")
             slug
+            growthStage
           }
         }
       }
