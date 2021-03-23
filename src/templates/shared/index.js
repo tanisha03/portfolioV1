@@ -20,5 +20,8 @@ export const Heading = styled.div`
     span{
       margin: 0 ${tokens.space[1]};
     }
+    .growth{
+      color:${tokens.colors.tertiary[1]};
+    }
   }
 `;
