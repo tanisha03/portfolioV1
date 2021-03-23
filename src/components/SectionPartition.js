@@ -11,14 +11,19 @@ const SectionWrapper=styled.div`
         color:${tokens.colors.primary[0]};
     }
     span{
-        display:flex;
-        align-items:center;
-        justify-content:flex-end;
+        // display:flex;
+        // align-items:center;
+        // justify-content:flex-end;
         a{
-            border-bottom:1px solid ${tokens.colors.secondary[4]};
-            transition: padding-bottom .3s;
-            &:hover{
-                padding-bottom:${tokens.space[1]};
+            display:flex;
+            align-items:center;
+            justify-content:flex-end;
+            transition: all .4s ease;
+            svg{
+                transform: translateX(0px);
+            }
+            &:hover svg{
+                    transform: translateX(8px);
             }
         }
     }
@@ -26,7 +31,7 @@ const SectionWrapper=styled.div`
         text-decoration:none;
         font-size:${tokens.fontSizes[5]};
         color:${tokens.colors.tertiary[0]};
-        font-weight:${tokens.fontWeights[1]};
+        font-weight:${tokens.fontWeights[1]}
     }
     img{
         box-shadow: 0 0 2px rgba(33,33,33,.2);
@@ -91,9 +96,7 @@ export default function SectionPartition({header,description,linkLabel, link, ch
                 <div className="container">{children}</div>
             </SectionContent>
             <span>
-                <a href={link}>{linkLabel}</a>
-                {/* <ArrowIcon/>             */}
-                {Icons['right_arrow']}
+                <a href={link}>{linkLabel} {Icons['right_arrow']}</a>
             </span>
         </SectionWrapper>
     )
