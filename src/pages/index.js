@@ -26,17 +26,25 @@ const GardenCard =  styled.div`
   background-color:white;
   display:flex;
   align-items:center;
+  justify-content:space-between;
   margin-bottom:${tokens.space[1]};
   padding:${tokens.space[2]};
   font-size:${tokens.fontSizes[3]};
   border-radius: ${tokens.space[2]};
   box-shadow: 0 0 2px rgba(33,33,33,.2);
   transition: box-shadow .5s ease-in-out;
+  .date{
+    font-size:${tokens.fontSizes[2]};
+    color:${tokens.colors.primary[1]};
+  }
   &:hover{
       box-shadow: 0 0 10px rgba(33,33,33,.2); 
   }
   @media only screen and (max-width: 576px) {
     padding:${tokens.space[4]};
+    .date{
+      display:none;
+    }
   }
 `;
 
@@ -63,7 +71,10 @@ const IndexPage = ({
               {
                 gardenQuery && gardenQuery.edges.map(i=>(
                   <Link to={i.node.frontmatter.slug}>
-                      <GardenCard>{i.node.frontmatter.title}</GardenCard>
+                      <GardenCard>
+                        <span>{i.node.frontmatter.title}</span>
+                        <span className="date">{i.node.frontmatter.date}</span> 
+                      </GardenCard>
                   </Link>
                 ))
               }
@@ -170,7 +181,7 @@ export const pageQuery = graphql`
           id
           frontmatter {
             title
-            date
+            date(formatString: "MMM DD, YYYY")
             slug
           }
         }
