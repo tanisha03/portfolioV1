@@ -1,4 +1,4 @@
-import React from "react"
+import React,{useState} from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import {graphql, Link } from "gatsby";
@@ -74,34 +74,60 @@ const GardenCard =  styled.div`
   }
 `;
 
+const FilterSection =  styled.div`
+  padding:2% 4% 0 4%;
+  span{
+    margin:0 ${tokens.space[2]};
+    cursor:pointer;
+  }
+`;
+
 const DigitalGardenPage = ({
   data : { gardenQuery}
-}) => (
+}) => {
+  const [gardenNotes, setgardenNotes] = useState(gardenQuery.edges || []);
+
+  const growthStage = tokens.terms.garden;
+
+  const handleStateFilter = (key) => {
+    const filteredCards = gardenQuery.edges.filter(card=>{
+      return card.node.frontmatter.growthStage === key
+    });
+
+    setgardenNotes(filteredCards);
+  };
+
+  return(
   <Layout>
     <SEO title="Digital Garden" />
-    {/* <div style={{width:"100%"}}> */}
       <HeaderContainer>
         <h1>Digital Garden</h1>
         <p>A personal internet space containing my personal wiki of some loosly knit thoughts, ideas, learnings, and work. </p>
       </HeaderContainer>
+      <FilterSection>
+        {
+          Object.entries(growthStage).map(([key,value],k)=>(
+            <span role="button" tabIndex="0" onClick={()=>handleStateFilter(key)} onKeyDown={()=>handleStateFilter(key)}>{value.label}</span>
+          ))
+        }
+      </FilterSection>
       <GardenContainer>
         {
-          gardenQuery.edges.map(item=>(
+          gardenNotes.map(item=>(
             <Link to={item.node.frontmatter.slug}>
               <GardenCard>
                 <div>{item.node.frontmatter.title}</div>
                 <div className="footer_notes">
                   <span>{item.node.frontmatter.date}</span>
-                  <span className="level">{tokens.terms.garden[item.node.frontmatter.growthStage].label} {tokens.terms.garden[item.node.frontmatter.growthStage].icon}</span>
+                  <span className="level">{growthStage[item.node.frontmatter.growthStage].label} {growthStage[item.node.frontmatter.growthStage].icon}</span>
                 </div>
               </GardenCard>
             </Link>
           ))
         }
       </GardenContainer>
-    {/* </div> */}
   </Layout>
-)
+)};
 
 export default DigitalGardenPage
 
