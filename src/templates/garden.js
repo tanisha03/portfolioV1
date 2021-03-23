@@ -16,7 +16,7 @@ const GardenPage = ({children,pageContext}) => {
           <div className="header-wrapper">
             <div>
                 <span>Updated on {new Date(pageContext?.frontmatter?.date).toString().slice(4,15)},</span>
-                {/* <span className="growth">{pageContext?.frontmatter?.growthStage}</span> */}
+                <span className="growth">{pageContext?.frontmatter?.growthStage}</span>
                 <span className="growth">{tokens.terms.garden[pageContext?.frontmatter?.growthStage]?.label} {tokens.terms.garden[pageContext?.frontmatter?.growthStage]?.icon}</span>
             </div>
             <div>{pageContext?.frontmatter?.topics.map(topic=>(
