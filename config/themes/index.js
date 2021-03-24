@@ -90,7 +90,8 @@ export const tokens = {
         tertiary:{
             0:'#3568cf',
             1:'#498a45',
-            2:'#f4fff3'
+            2:'#f4fff3',
+            3:'#b9dcb7'
         }
     },
 

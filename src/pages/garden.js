@@ -83,7 +83,7 @@ const FilterSection =  styled.div`
     padding:${tokens.space[1]} ${tokens.space[2]};
     border-radius:5px;
     cursor:pointer;
-    border:0.5px solid ${tokens.colors.tertiary[1]};
+    border:0.5px solid ${tokens.colors.tertiary[3]};
     &:hover{
       background-color:${tokens.colors.tertiary[2]};
       border:0.5px solid ${tokens.colors.tertiary[2]};
