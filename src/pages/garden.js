@@ -28,6 +28,7 @@ const GardenContainer =  styled.div`
   padding:4%;
   display:flex;
   flex-wrap:wrap;
+  float:left;
   div{
     margin:${tokens.space[4]};
   }
@@ -44,7 +45,7 @@ const GardenContainer =  styled.div`
 
 const GardenCard =  styled.div`
   height:130px;
-  width:300px;
+  width:280px;
   background-color:#FCFBFE;
   display:flex;
   justify-content:space-between;
@@ -76,9 +77,17 @@ const GardenCard =  styled.div`
 
 const FilterSection =  styled.div`
   padding:2% 4% 0 4%;
+  float:right;
   span{
     margin:0 ${tokens.space[2]};
+    padding:${tokens.space[1]} ${tokens.space[2]};
+    border-radius:5px;
     cursor:pointer;
+    border:0.5px solid ${tokens.colors.tertiary[1]};
+    &:hover{
+      background-color:${tokens.colors.tertiary[2]};
+      border:0.5px solid ${tokens.colors.tertiary[2]};
+    }
   }
 `;
 
@@ -107,7 +116,7 @@ const DigitalGardenPage = ({
       <FilterSection>
         {
           Object.entries(growthStage).map(([key,value],k)=>(
-            <span role="button" tabIndex="0" onClick={()=>handleStateFilter(key)} onKeyDown={()=>handleStateFilter(key)}>{value.label}</span>
+            <span role="button" tabIndex="0" onClick={()=>handleStateFilter(key)} onKeyDown={()=>handleStateFilter(key)}>{value.icon} {value.label}</span>
           ))
         }
       </FilterSection>

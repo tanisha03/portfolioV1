@@ -89,7 +89,8 @@ export const tokens = {
         },
         tertiary:{
             0:'#3568cf',
-            1:'#498a45'
+            1:'#498a45',
+            2:'#f4fff3'
         }
     },
 
@@ -101,7 +102,7 @@ export const tokens = {
         },
         L2:{
           label:'Flowering',
-          icon:'🌷',
+          icon:'🪴',
         },
         L3:{
           label:'Evergreen',
