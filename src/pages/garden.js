@@ -77,7 +77,8 @@ const GardenCard =  styled.div`
 
 const FilterSection =  styled.div`
   padding:2% 4% 0 4%;
-  float:right;
+  display:flex;
+  justify-content:flex-end;
   span{
     margin:0 ${tokens.space[2]};
     padding:${tokens.space[1]} ${tokens.space[2]};
@@ -88,6 +89,11 @@ const FilterSection =  styled.div`
       background-color:${tokens.colors.tertiary[2]};
       border:0.5px solid ${tokens.colors.tertiary[2]};
     }
+    @media only screen and (max-width: 576px) {
+      margin:0 ${tokens.space[1]};
+      padding:${tokens.space[1]};
+      text-align:center;
+   }
   }
 `;
 

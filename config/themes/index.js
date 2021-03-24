@@ -91,7 +91,7 @@ export const tokens = {
             0:'#3568cf',
             1:'#498a45',
             2:'#f4fff3',
-            3:'#b9dcb7'
+            3:'#cbe4ca'
         }
     },
 
@@ -103,7 +103,7 @@ export const tokens = {
         },
         L2:{
           label:'Flowering',
-          icon:'🪴',
+          icon:'🌻',
         },
         L3:{
           label:'Evergreen',
