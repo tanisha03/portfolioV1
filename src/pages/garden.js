@@ -75,6 +75,27 @@ const GardenCard =  styled.div`
   }
 `;
 
+
+const TopicsSection =  styled.div`
+padding:2% 4% 0 4%;
+display:flex;
+justify-content:flex-start;
+color:${tokens.colors.tertiary[0]};
+span{
+  margin:0 ${tokens.space[2]};
+  padding:${tokens.space[1]} ${tokens.space[2]};
+  cursor:pointer;
+  &:hover{
+    color:${tokens.colors.primary[1]};
+  }
+  @media only screen and (max-width: 576px) {
+    margin:0 ${tokens.space[1]};
+    padding:${tokens.space[1]};
+    text-align:center;
+ }
+}
+`;
+
 const FilterSection =  styled.div`
   padding:2% 4% 0 4%;
   display:flex;
@@ -97,11 +118,24 @@ const FilterSection =  styled.div`
   }
 `;
 
+
+
+
+const extractTopicsFromGardenQuery = (gardenQuery) => {
+  let topics=["All"];
+  gardenQuery.map(note=>{
+    note.node.frontmatter.topics.map(topic=>topics.push(topic));
+  });
+  topics = [...new Set(topics)];
+  return topics;
+}
+
 const DigitalGardenPage = ({
   data : { gardenQuery}
 }) => {
-  const [gardenNotes, setgardenNotes] = useState(gardenQuery.edges || []);
+  const [gardenNotes, setGardenNotes] = useState(gardenQuery.edges || []);
 
+  const gardenTopics = extractTopicsFromGardenQuery(gardenQuery.edges);
   const growthStage = tokens.terms.garden;
 
   const handleStateFilter = (key) => {
@@ -109,8 +143,22 @@ const DigitalGardenPage = ({
       return card.node.frontmatter.growthStage === key
     });
 
-    setgardenNotes(filteredCards);
+    setGardenNotes(filteredCards);
   };
+
+  const handleTopicFilter = (topic) => {
+
+    if(topic==="All") {
+      setGardenNotes(gardenQuery.edges);
+      return;
+    }
+
+    const filteredCards = gardenQuery.edges.filter(card=>{
+      return card.node.frontmatter.topics.includes(topic);
+    });
+
+    setGardenNotes(filteredCards);
+  }
 
   return(
   <Layout>
@@ -122,14 +170,21 @@ const DigitalGardenPage = ({
       <FilterSection>
         {
           Object.entries(growthStage).map(([key,value],k)=>(
-            <span role="button" tabIndex="0" onClick={()=>handleStateFilter(key)} onKeyDown={()=>handleStateFilter(key)}>{value.icon} {value.label}</span>
+            <span role="button" tabIndex="0" key={key} onClick={()=>handleStateFilter(key)} onKeyDown={()=>handleStateFilter(key)}>{value.icon} {value.label}</span>
           ))
         }
       </FilterSection>
+      <TopicsSection>
+        {
+          gardenTopics.map((topic)=>(
+            <span role="button" tabIndex="0" key={topic.id} onClick={()=>handleTopicFilter(topic)} ontopicDown={()=>handleTopicFilter(topic)}>{topic}</span>
+          ))
+        }
+      </TopicsSection>
       <GardenContainer>
         {
           gardenNotes.map(item=>(
-            <Link to={item.node.frontmatter.slug}>
+            <Link to={item.node.frontmatter.slug} key={item.index}>
               <GardenCard>
                 <div>{item.node.frontmatter.title}</div>
                 <div className="footer_notes">
@@ -162,6 +217,7 @@ export const pageQuery = graphql`
             date(formatString: "MMM DD, YYYY")
             slug
             growthStage
+            topics
           }
         }
       }
