@@ -10,6 +10,12 @@ const MainWrapper = styled.div`
   flex-direction:column;
   align-items:center;
   margin:${tokens.space[6]} 0;
+  img{
+      width:70%;
+      @media only screen and (max-width: 576px) {
+        width:80%
+      }
+  }
 `;
 
 
@@ -18,7 +24,7 @@ const CodeDrawingsPage = (props) => {
     return(
         <Layout>
             <MainWrapper>
-                <img src={imgUrl} style={{width:"70%"}}/>
+                <img src={imgUrl} alt={"code drawing"}/>
             </MainWrapper>
         </Layout>
 )}

@@ -19,16 +19,20 @@ const DrawingsWrapper = styled.div`
   background-color:${tokens.colors.secondary[1]};
   width:60%;
   img{
-    max-width:320px;
+    width:45%;
+    @media only screen and (max-width: 992px) {
+      width:55%;
+    }
+    @media only screen and (max-width: 768px) {
+      width:100%;
+    }
   }
-//   @media only screen and (max-width: 576px) {
-//     div{
-//      width:100%;
-//      img{
-//        width:100%;
-//      }
-//     }
-//  }
+  @media only screen and (max-width: 768px) {
+    flex-direction:column;
+  }
+  @media only screen and (max-width: 576px) {
+    width:80%
+  }
 `;
 
 const DescriptionSection = styled.div`
