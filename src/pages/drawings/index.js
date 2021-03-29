@@ -1,9 +1,9 @@
 import React from "react"
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
+import Layout from "../../components/Layout"
+import SEO from "../../components/SEO"
 import {graphql } from "gatsby";
 import styled from 'styled-components';
-import {tokens} from "../../config/themes"
+import {tokens} from "../../../config/themes"
 
 const MainWrapper = styled.div`
   display:flex;
@@ -17,6 +17,9 @@ const DrawingsWrapper = styled.div`
   justify-content:space-between;
   background-color:${tokens.colors.secondary[1]};
   width:60%;
+  img{
+    max-width:320px;
+  }
 //   @media only screen and (max-width: 576px) {
 //     div{
 //      width:100%;
@@ -49,7 +52,7 @@ const CodeDrawingsPage = ({
             <DescriptionSection>
               <h2>{item.node.frontmatter.title}</h2>
               <p>{item.node.frontmatter.desc}</p>
-              <a href={item.node.frontmatter.cover.childImageSharp.fluid.src}>View</a>
+              <a href={`/drawings/view?url=${item.node.frontmatter.cover.childImageSharp.fluid.src}`}>View</a>
             </DescriptionSection>
             <img src={item.node.frontmatter.cover.childImageSharp.fluid.src} alt={item.node.frontmatter.title}/>
           </DrawingsWrapper>
@@ -79,7 +82,7 @@ export const pageQuery = graphql`
             desc
             cover {
               childImageSharp {
-                fluid(maxWidth: 320, maxHeight: 460) {
+                fluid(maxWidth: 830, maxHeight: 1200) {
                   src
                 }
               }
