@@ -4,6 +4,7 @@ import SEO from "../../components/SEO"
 import {graphql } from "gatsby";
 import styled from 'styled-components';
 import {tokens} from "../../../config/themes"
+import {Icons} from "../../assets/icon"
 
 const MainWrapper = styled.div`
   display:flex;
@@ -35,6 +36,16 @@ const DescriptionSection = styled.div`
   h2{
     margin-bottom:${tokens.space[6]};
   }
+  p{
+    margin-bottom:${tokens.space[4]};
+  }
+  a{
+    display:flex;
+    align-items:center;
+    svg{
+      margin-left:${tokens.space[2]};
+    }
+  }
 `;
 
 const CodeDrawingsPage = ({
@@ -52,7 +63,7 @@ const CodeDrawingsPage = ({
             <DescriptionSection>
               <h2>{item.node.frontmatter.title}</h2>
               <p>{item.node.frontmatter.desc}</p>
-              <a href={`/drawings/view?url=${item.node.frontmatter.cover.childImageSharp.fluid.src}`}>View</a>
+              <a href={`/drawings/view?url=${item.node.frontmatter.cover.childImageSharp.fluid.src}`}>Full View {Icons['full_view']}</a>
             </DescriptionSection>
             <img src={item.node.frontmatter.cover.childImageSharp.fluid.src} alt={item.node.frontmatter.title}/>
           </DrawingsWrapper>
