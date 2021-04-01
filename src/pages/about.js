@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/Layout";
-import {ABOUT_DATA} from "../../config/about";
+import {ABOUT_DATA, TALKS} from "../../config/about";
 import styled from 'styled-components';
 import {tokens} from "../../config/themes"
 import ProfilePicture from "../assets/images/profile.png"
@@ -14,7 +14,7 @@ const AboutSection=styled.div`
     color:${tokens.colors.primary[0]};
     width:100%;
     div{
-        width:30%;
+        width:50%;
         margin-right:5%;
     }
     h1{
@@ -48,6 +48,18 @@ const DownloadLink= styled.a`
     font-weight:${tokens.fontWeights[1]};
 `;
 
+const DesriptionSection= styled.div`
+    padding:4% 10%;
+    h2{
+        font-size:${tokens.fontSizes[5]};
+        color:${tokens.colors.tertiary[0]};
+        margin-bottom:${tokens.space[4]};
+    }
+    iframe{
+        margin:0 ${tokens.space[4]} ${tokens.space[4]} 0;
+    }
+`;
+
 
 const AboutPage = () => {
   return (
@@ -69,6 +81,24 @@ const AboutPage = () => {
             </div>
             <img src={ProfilePicture} alt="profile of Tanisha Sabherwal" />
         </AboutSection>
+        <DesriptionSection>
+                <h2>TALKS</h2>
+                <div>
+                    {
+                        TALKS.map(talkDescription=>(
+                            <iframe
+                                src={talkDescription.url}
+                                title={talkDescription.title}
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                frameBorder="0"
+                                webkitallowfullscreen="true"
+                                mozallowfullscreen="true"
+                                allowFullScreen
+                                />
+                        ))
+                    }
+                </div>
+        </DesriptionSection>
     </Layout>
   );
 };
