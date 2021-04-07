@@ -79,6 +79,7 @@ const GardenCard =  styled.div`
 const TopicsSection =  styled.div`
 padding:2% 4% 0 4%;
 display:flex;
+flex-wrap:wrap;
 justify-content:flex-start;
 color:${tokens.colors.tertiary[0]};
 span{

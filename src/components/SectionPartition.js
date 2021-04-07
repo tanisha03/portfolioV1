@@ -80,7 +80,7 @@ const SectionContent=styled.div`
     @media only screen and (max-width: 576px) {
             .container{
                 a img{
-                    margin:${tokens.space[0]};
+                    margin:${tokens.space[4]} 0;
                     width:100%; 
                 }  
             }

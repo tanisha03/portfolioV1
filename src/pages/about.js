@@ -25,6 +25,7 @@ const AboutSection=styled.div`
     p{
         font-size:${tokens.fontSizes[4]};
         font-weight:${tokens.fontWeights.thin};
+        text-align: justify;
     }
     img{
         width:25%;
@@ -43,7 +44,7 @@ const AboutSection=styled.div`
 
 const DownloadLink= styled.a`
     text-decoration:none;
-    font-size:${tokens.fontSizes[6]};
+    font-size:${tokens.fontSizes[5]};
     color:${tokens.colors.tertiary[0]};
     font-weight:${tokens.fontWeights[1]};
 `;
@@ -87,6 +88,7 @@ const AboutPage = () => {
                     {
                         TALKS.map(talkDescription=>(
                             <iframe
+                                width="350" height="220" 
                                 src={talkDescription.url}
                                 title={talkDescription.title}
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -97,6 +99,15 @@ const AboutPage = () => {
                                 />
                         ))
                     }
+                    <div id="retainable-rss-embed" 
+                        data-rss="https://medium.com/feed/retainable,
+                        https://medium.com/feed/vue-mastery"
+                        data-maxcols="3" 
+                        data-layout="grid" 
+                        data-poststyle="inline" 
+                        data-readmore="Read the rest" 
+                        data-buttonclass="btn btn-primary" 
+                        data-offset="-100"></div>
                 </div>
         </DesriptionSection>
     </Layout>
