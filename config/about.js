@@ -43,3 +43,25 @@ export const TALKS = [{
         url: "https://www.youtube.com/embed/zSW4hqJOFwk?start=4571"
     },
 ];
+
+export const ARTICLE_LINKS = [{
+    link:"https://bootcamp.uxdesign.cc/inclusivity-in-video-conferencing-the-new-normal-730244d7fabd",
+    title:"Inclusivity in Video Conferencing",
+    thumbnail:"https://miro.medium.com/max/1400/0*hy-C14sEuEbjEA53"
+},
+{
+    link:"https://uxplanet.org/ivizz-redefining-hygiene-ui-ux-9fc66e773caf",
+    title:"Ivizz - Redefining Hygiene : UI/UX",
+    thumbnail:"https://miro.medium.com/max/4160/1*6CckHn10JaLBM5OW8dusvw.png"
+},
+{
+    link:"https://uxplanet.org/the-design-of-habit-forming-products-1356d01447cd",
+    title:"The Design of Habit Forming Products",
+    thumbnail:"https://miro.medium.com/max/1400/0*66Uv6l-v8INfcWUO.png"
+},
+{
+    link:"https://uxdesign.cc/is-accessible-neumorphism-possible-87ae1b4b1077",
+    title:"Is Accessible Neumorphism Possible",
+    thumbnail:"https://miro.medium.com/max/1300/0*QOyCGAeBMlk86tIp.png"
+    }
+];

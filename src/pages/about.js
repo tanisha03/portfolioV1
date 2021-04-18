@@ -1,6 +1,6 @@
-import React from "react";
+import React,{useEffect} from "react";
 import Layout from "../components/Layout";
-import {ABOUT_DATA, TALKS} from "../../config/about";
+import {ABOUT_DATA, TALKS, ARTICLE_LINKS} from "../../config/about";
 import styled from 'styled-components';
 import {tokens} from "../../config/themes"
 import ProfilePicture from "../assets/images/profile.png"
@@ -61,8 +61,44 @@ const DesriptionSection= styled.div`
     }
 `;
 
+const MediumCard = styled.div`
+    height:150px;
+    width:550px;
+    border:1px solid #dcd4d4;
+    box-shadow: 0 2px 5px rgba(154,160,185,.05), 0 5px 10px rgba(166,173,201,.2);
+    display:flex;
+    position:relative;
+    margin: ${tokens.space[4]} ${tokens.space[4]} ${tokens.space[4]} 0;
+    img{
+        height:100%;
+        width:195px;
+    }
+    .desc-container{
+        padding:${tokens.space[6]};
+    }
+    .title{
+        font-size:${tokens.fontSizes[6]};
+        color:${tokens.colors.primary[0]};
+    }
+    .footer-desc{
+        position:absolute;
+        bottom:${tokens.space[6]};
+        font-size:${tokens.fontSizes[3]};
+        display:flex;
+        align-items:center;
+        color:${tokens.colors.primary[2]};
+        span{
+            margin: 0 ${tokens.space[2]};
+        }
+        
+    }
+`;
+
 
 const AboutPage = () => {
+    useEffect(() => {
+        console.log("//cdn.iframe.ly/${article.code}/thumbnail");
+    }, [])
   return (
     <Layout>
         <AboutSection>
@@ -99,15 +135,28 @@ const AboutPage = () => {
                                 />
                         ))
                     }
-                    <div id="retainable-rss-embed" 
-                        data-rss="https://medium.com/feed/retainable,
-                        https://medium.com/feed/vue-mastery"
-                        data-maxcols="3" 
-                        data-layout="grid" 
-                        data-poststyle="inline" 
-                        data-readmore="Read the rest" 
-                        data-buttonclass="btn btn-primary" 
-                        data-offset="-100"></div>
+                </div>
+        </DesriptionSection>
+        <DesriptionSection>
+                <h2>ARTICLES</h2>
+                <div style={{display:"flex", flexWrap:"wrap"}}>
+                    {
+                        ARTICLE_LINKS.map(article=>(
+                            <a href={article.link} rel="noreferrer" target="_blank">
+                                <MediumCard>
+                                        <img src={article.thumbnail}/>
+                                        <div className="desc-container">
+                                            <p className="title">{article.title}</p>
+                                            <div className="footer-desc">
+                                                <img src="https://miro.medium.com/max/3150/1*sHhtYhaCe2Uc3IU0IgKwIQ.png" style={{height:"20px", width:"20px"}}/> 
+                                                <span>|</span>
+                                                <p>Medium</p>
+                                            </div>
+                                        </div>
+                                </MediumCard>
+                            </a>
+                        ))
+                    }
                 </div>
         </DesriptionSection>
     </Layout>

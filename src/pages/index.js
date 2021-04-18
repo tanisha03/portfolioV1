@@ -82,6 +82,27 @@ const IndexPage = ({
             {/* </div> */}
         </SectionPartition>
 
+      {/* Code Draw */}
+      <SectionPartition 
+          header="Code Drawings"
+          description="Explain code and concepts with figures and pictorial metaphors."
+          linkLabel="Explore Code Drawings"
+          link="/drawings"
+          >
+            <div>
+              <div>
+              {
+                drawingsQuery && drawingsQuery.edges.map(i=>(
+                  <Link to={i.node.frontmatter.slug}>
+                      <img src={i.node.frontmatter.cover.childImageSharp.fluid.src} alt={i.node.frontmatter.title}/>
+                  </Link>
+                ))
+              }
+              </div>
+            </div>
+        </SectionPartition>
+        
+
       {/* Book Shelf */}
         <SectionPartition 
           header="Book Shelf"
@@ -102,26 +123,6 @@ const IndexPage = ({
             </div>
         </SectionPartition>
 
-        {/* Code Draw */}
-        <SectionPartition 
-          header="Code Drawings"
-          description="Explain code and concepts with figures and pictorial metaphors."
-          linkLabel="Explore Code Drawings"
-          link="/drawings"
-          >
-            <div>
-              <div>
-              {
-                drawingsQuery && drawingsQuery.edges.map(i=>(
-                  <Link to={i.node.frontmatter.slug}>
-                      <img src={i.node.frontmatter.cover.childImageSharp.fluid.src} alt={i.node.frontmatter.title}/>
-                  </Link>
-                ))
-              }
-              </div>
-            </div>
-        </SectionPartition>
-        
       </div>
     </Layout>
   );
