@@ -1,5 +1,16 @@
-*,*:before,*:after{
-    margin:0;
+*,
+*:before,
+*:after {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+ol,
+ul {
+    margin-left: 2em;
+}
+
+li {
+    margin-bottom: 0.5em;
 }
