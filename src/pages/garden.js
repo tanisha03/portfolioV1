@@ -166,7 +166,7 @@ const DigitalGardenPage = ({
     <SEO title="Digital Garden" />
       <HeaderContainer>
         <h1>Digital Garden</h1>
-        <p>A personal internet space containing my personal wiki of some loosly knit thoughts, ideas, learnings, and work. </p>
+        <p>A personal internet space containing my personal wiki of some loosly knit thoughts, ideas, learnings, and work. Some are as fresh as a sapling, while others are being tendered into flowers but some remain to be forever blooming and evergreen.</p>
       </HeaderContainer>
       <FilterSection>
         {

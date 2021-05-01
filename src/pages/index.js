@@ -61,7 +61,7 @@ const IndexPage = ({
     {/* Digital Garden  */}
       <SectionPartition 
           header="Digital Garden"
-          description="Loosely knit notes in and around everything that is processed in my mind."
+          description="Loosely knit notes in and around everything that is processed in my mind. Some are as fresh as a sapling, while others are being tendered into flowers but some remain to be forever blooming and evergreen. "
           linkLabel="Visit the Garden"
           link="/garden"
           direction="row"
@@ -85,7 +85,7 @@ const IndexPage = ({
       {/* Code Draw */}
       <SectionPartition 
           header="Code Drawings"
-          description="Explain code and concepts with figures and pictorial metaphors."
+          description="Explaining code and concepts with figures and pictorial metaphors. An attempt to gratify the visual learner within us by expressing shapes into anything and everything."
           linkLabel="Explore Code Drawings"
           link="/drawings"
           >
@@ -106,7 +106,7 @@ const IndexPage = ({
       {/* Book Shelf */}
         <SectionPartition 
           header="Book Shelf"
-          description="My virtual study containing all the books that helped me give a new perspective."
+          description="My virtual study containing all the books that helped me give a new perspective. Some are half read, some fully yet all of them gave me something to ponder upon."
           linkLabel="Browse the Book shelf"
           link="/books"
           >
