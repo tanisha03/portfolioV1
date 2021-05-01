@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React from "react";
 import Layout from "../components/Layout";
 import {ABOUT_DATA, TALKS, ARTICLE_LINKS} from "../../config/about";
 import styled from 'styled-components';
@@ -50,7 +50,8 @@ const DownloadLink= styled.a`
 `;
 
 const DesriptionSection= styled.div`
-    padding:4% 10%;
+    padding:4% 8%;
+    width:100%;
     h2{
         font-size:${tokens.fontSizes[5]};
         color:${tokens.colors.tertiary[0]};
@@ -59,11 +60,14 @@ const DesriptionSection= styled.div`
     iframe{
         margin:0 ${tokens.space[4]} ${tokens.space[4]} 0;
     }
+    @media only screen and (max-width: 576px) {
+        padding:4% 2%;
+    }
 `;
 
 const MediumCard = styled.div`
-    height:150px;
-    width:550px;
+    height:180px;
+    width:35vw;
     border:1px solid #dcd4d4;
     box-shadow: 0 2px 5px rgba(154,160,185,.05), 0 5px 10px rgba(166,173,201,.2);
     display:flex;
@@ -92,13 +96,23 @@ const MediumCard = styled.div`
         }
         
     }
+    @media only screen and (max-width: 1024px) {
+        width:100%;
+        margin: ${tokens.space[4]} 0;
+    }
+    @media only screen and (max-width: 576px) {
+        height:160px;
+        .title{
+            font-size:${tokens.fontSizes[4]};
+        }
+        img{
+            width:150px;
+        }
+    }
 `;
 
 
 const AboutPage = () => {
-    useEffect(() => {
-        console.log("//cdn.iframe.ly/${article.code}/thumbnail");
-    }, [])
   return (
     <Layout>
         <AboutSection>
@@ -144,11 +158,11 @@ const AboutPage = () => {
                         ARTICLE_LINKS.map(article=>(
                             <a href={article.link} rel="noreferrer" target="_blank">
                                 <MediumCard>
-                                        <img src={article.thumbnail}/>
+                                        <img src={article.thumbnail} alt="thumbanil image" aria-hidden="true"/>
                                         <div className="desc-container">
                                             <p className="title">{article.title}</p>
                                             <div className="footer-desc">
-                                                <img src="https://miro.medium.com/max/3150/1*sHhtYhaCe2Uc3IU0IgKwIQ.png" style={{height:"20px", width:"20px"}}/> 
+                                                <img src="https://miro.medium.com/max/3150/1*sHhtYhaCe2Uc3IU0IgKwIQ.png" alt="medium logo" aria-hidden="true" style={{height:"20px", width:"20px"}}/> 
                                                 <span>|</span>
                                                 <p>Medium</p>
                                             </div>

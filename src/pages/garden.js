@@ -124,7 +124,7 @@ const FilterSection =  styled.div`
 
 const extractTopicsFromGardenQuery = (gardenQuery) => {
   let topics=["All"];
-  gardenQuery.map(note=>{
+  gardenQuery.forEach(note=>{
     note.node.frontmatter.topics.map(topic=>topics.push(topic));
   });
   topics = [...new Set(topics)];
@@ -178,7 +178,7 @@ const DigitalGardenPage = ({
       <TopicsSection>
         {
           gardenTopics.map((topic)=>(
-            <span role="button" tabIndex="0" key={topic.id} onClick={()=>handleTopicFilter(topic)} ontopicDown={()=>handleTopicFilter(topic)}>{topic}</span>
+            <span role="button" tabIndex="0" key={topic.id} onClick={()=>handleTopicFilter(topic)} onKeyDown={()=>handleTopicFilter(topic)}>{topic}</span>
           ))
         }
       </TopicsSection>
