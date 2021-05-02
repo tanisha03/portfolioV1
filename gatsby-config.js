@@ -104,8 +104,6 @@ module.exports = {
       options: {
         trackingIds: [
           "UA-196038948-1", // Google Analytics / GA
-          "", // Google Ads / Adwords / AW
-          "", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
         ],
         gtagConfig: {
           optimize_id: "OPT_CONTAINER_ID",
