@@ -53,6 +53,7 @@ const Layout = ({ children }) => {
     <>
       <Helmet>
         <link rel="icon" href={favicon} />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-196038948-1"></script>
       </Helmet>
       <Header siteTitle={data.site.siteMetadata.title} />
       <Container>
