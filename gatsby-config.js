@@ -8,7 +8,7 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: `Tanisha Sabherwal`,
-    description: `Tanisha's personal internet space with learnings, ideas and more.`,
+    description: `Tanisha Sabherwal's personal internet space with learnings, ideas and more.`,
     author:`Tanisha Sabherwal`,
     handle: `@tanishaaa03`
   },

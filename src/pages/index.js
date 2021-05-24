@@ -54,7 +54,9 @@ const IndexPage = ({
 }) => {
   return (
     <Layout>
-      <SEO title="Blog" />
+      <SEO 
+      title="Hi👋"
+      />
       <Hero />
       <div>
         

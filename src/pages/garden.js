@@ -209,7 +209,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    gardenQuery: allMdx(filter: {frontmatter: {type: {eq: "notes"}}}, sort: {order: DESC, fields: frontmatter___date}) {
+    gardenQuery: allMdx(filter: {frontmatter: {type: {eq: "notes"}, published: {eq: true}}}, sort: {order: DESC, fields: frontmatter___date}) {
       edges {
         node {
           id
