@@ -1,5 +1,5 @@
 # tanishasabherwal.me
 
-Tanisha's personal web space running on Gatsby.
+Tanisha's personal internet space running on Gatsby.
 
 
