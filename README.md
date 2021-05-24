@@ -1,3 +1,5 @@
----
-gatsby develop -H $(hostname) -p 8000
----
+# tanishasabherwal.me
+
+Tanisha's personal web space running on Gatsby.
+
+
