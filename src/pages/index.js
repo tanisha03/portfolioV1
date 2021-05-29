@@ -17,6 +17,7 @@ const GardenWrapper =  styled.div`
   }
   @media only screen and (max-width: 576px) {
     margin-bottom:${tokens.space[4]};
+    width:100%;
   }
 `;
 
@@ -41,7 +42,7 @@ const GardenCard =  styled.div`
       box-shadow: 0 0 10px rgba(33,33,33,.2); 
   }
   @media only screen and (max-width: 576px) {
-    padding:${tokens.space[4]};
+    padding:${tokens.space[2]};
     .date{
       display:none;
     }
@@ -88,7 +89,7 @@ const IndexPage = ({
       <SectionPartition 
           header="Code Drawings"
           description="Explaining code and concepts with figures and pictorial metaphors. An attempt to gratify the visual learner within us by expressing shapes into anything and everything."
-          linkLabel="Explore Code Drawings"
+          linkLabel="Explore Drawings"
           link="/drawings"
           >
             <div>
