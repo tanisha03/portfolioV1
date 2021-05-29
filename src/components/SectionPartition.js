@@ -59,6 +59,8 @@ const SectionContent=styled.div`
         align-items:center;
         // margin-left:${tokens.space[5]};
         a img{
+            width:170px;
+            height:260px;
             margin:${tokens.space[2]};
         }
     }
@@ -82,6 +84,7 @@ const SectionContent=styled.div`
                 a img{
                     margin:${tokens.space[4]} 0;
                     width:100%; 
+                    min-height:550px;
                 }  
             }
     }
