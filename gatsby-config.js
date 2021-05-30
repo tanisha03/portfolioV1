@@ -85,13 +85,16 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-styled-components',
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        fonts: [
+        fonts: {
+          google: [
           {
             family: `Montserrat`,
+            variants: ["100","300", "400", "500","600","700"],
           }
         ],
+        }
       },
     },
     {
