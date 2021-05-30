@@ -10,6 +10,7 @@ export const Heading = styled.div`
   h1{
     font-size:${tokens.fontSizes[8]};
     margin-bottom:${tokens.space[2]};
+    font-weight:${tokens.fontWeights.medium};
   }
 
   .header-wrapper{

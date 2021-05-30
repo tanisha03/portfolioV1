@@ -8,6 +8,9 @@ import {tokens} from "../../config/themes"
 const HeaderContainer =  styled.div`
   padding:4% 4% 0 4%;
   width:100%;
+  h1{
+    font-weight:${tokens.fontWeights.medium};
+  }
   p{
     width:50%;
     margin-top:${tokens.space[5]};
@@ -51,7 +54,10 @@ const GardenCard =  styled.div`
   justify-content:space-between;
   // align-items:center;
   flex-direction:column;
-  font-weight:${tokens.fontWeights.semibold};
+
+  .garden-title{
+    font-weight:${tokens.fontWeights.medium};
+  }
 
   padding:${tokens.space[2]};
   border-radius: 2px;
@@ -187,7 +193,7 @@ const DigitalGardenPage = ({
           gardenNotes.map(item=>(
             <Link to={item.node.frontmatter.slug} key={item.index}>
               <GardenCard>
-                <div>{item.node.frontmatter.title}</div>
+                <div className="garden-title">{item.node.frontmatter.title}</div>
                 <div className="footer_notes">
                   <span>{item.node.frontmatter.date}</span>
                   <span className="level">{growthStage[item.node.frontmatter.growthStage].label} {growthStage[item.node.frontmatter.growthStage].icon}</span>

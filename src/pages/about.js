@@ -24,7 +24,6 @@ const AboutSection=styled.div`
     }
     p{
         font-size:${tokens.fontSizes[4]};
-        font-weight:${tokens.fontWeights.thin};
         text-align: justify;
     }
     img{

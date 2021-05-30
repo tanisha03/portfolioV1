@@ -8,12 +8,10 @@ const SectionWrapper=styled.div`
     padding:${tokens.space[12]};
     h2{
         font-size:${tokens.fontSizes[6]};
+        font-weight:${tokens.fontWeights.medium};
         color:${tokens.colors.primary[0]};
     }
     span{
-        // display:flex;
-        // align-items:center;
-        // justify-content:flex-end;
         a{
             display:flex;
             align-items:center;
@@ -31,7 +29,6 @@ const SectionWrapper=styled.div`
         text-decoration:none;
         font-size:${tokens.fontSizes[5]};
         color:${tokens.colors.tertiary[0]};
-        font-weight:${tokens.fontWeights[1]}
     }
     img{
         box-shadow: 0 0 2px rgba(33,33,33,.2);
@@ -49,7 +46,6 @@ const SectionContent=styled.div`
         margin-top:${tokens.space[2]};
         font-size:${tokens.fontSizes[4]};
         color:${tokens.colors.primary[0]};
-        font-weight:${tokens.fontWeights[1]};
         width:25%;
     }
     .container{

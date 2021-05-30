@@ -30,11 +30,15 @@ const FooterContainer = styled.div`
     color:${tokens.colors.primary[1]};
     padding:${tokens.space[16]} ${tokens.space[8]} ${tokens.space[8]};
     display:flex;
+    flex-direction:row;
     justify-content:space-between;
     div{
         display:flex;
         a{
             padding: 0 ${tokens.space[2]};
+        }
+        @media only screen and (max-width: 576px) {
+            margin-bottom:${tokens.space[3]};
         }
     }
     svg {
@@ -48,6 +52,10 @@ const FooterContainer = styled.div`
         div a{
             padding: 0 ${tokens.space[1]};
         }
+    }
+    @media only screen and (max-width: 576px) {
+        flex-direction:column;
+        align-items:center;
     }
 `;
 
