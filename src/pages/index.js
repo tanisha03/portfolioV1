@@ -152,7 +152,7 @@ export const pageQuery = graphql`
             link
             cover {
               childImageSharp {
-                fluid(maxWidth: 400, maxHeight: 600) {
+                fluid(maxWidth: 420, maxHeight: 600) {
                   src
                 }
               }
