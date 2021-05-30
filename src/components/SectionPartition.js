@@ -84,7 +84,7 @@ const SectionContent=styled.div`
                 a img{
                     margin:${tokens.space[4]} 0;
                     width:100%; 
-                    min-height:480px;
+                    min-height:378px;
                 }  
             }
     }

@@ -33,7 +33,7 @@ export const Icons = {
         </svg>
     ),
     refresh:(
-        <svg width="30" height="30" viewBox="0 0 500 500">
+        <svg width="30" height="30" viewBox="0 0 500 500" aria-hidden="true">
                 <g>
                     <g>
                         <path d="M409.6,0c-9.426,0-17.067,7.641-17.067,17.067v62.344C304.667-5.656,164.478-3.386,79.411,84.479
@@ -55,7 +55,7 @@ export const Icons = {
             </svg>
     ),
     hamburger:(
-        <svg width="30" height="30" viewBox="0 0 500 500" fill="#1f1b24">
+        <svg width="30" height="30" viewBox="0 0 500 500" fill="#1f1b24" aria-hidden="true">
         <g>
             <g>
                 <path d="M492,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h472c11.046,0,20-8.954,20-20S503.046,236,492,236z"/>
@@ -75,7 +75,7 @@ export const Icons = {
         </svg>
     ),
     close:(
-        <svg width="25" height="25" viewBox="0 0 500 500" fill="#1f1b24">
+        <svg width="25" height="25" viewBox="0 0 500 500" fill="#1f1b24" aria-hidden="true">
         <g>
             <g>
                 <path d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717
