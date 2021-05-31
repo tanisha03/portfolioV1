@@ -58,6 +58,15 @@ const DesriptionSection= styled.div`
     }
     iframe{
         margin:0 ${tokens.space[4]} ${tokens.space[4]} 0;
+        width:340px;
+        height:200px;
+        @media only screen and (max-width: 768px) {
+            width:100%;
+            height:340px;
+        }
+        @media only screen and (max-width: 576px) {
+            height:280px;
+        }
     }
     @media only screen and (max-width: 576px) {
         padding:4% 2%;
@@ -137,7 +146,6 @@ const AboutPage = () => {
                     {
                         TALKS.map(talkDescription=>(
                             <iframe
-                                width="350" height="220" 
                                 src={talkDescription.url}
                                 title={talkDescription.title}
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -157,7 +165,7 @@ const AboutPage = () => {
                         ARTICLE_LINKS.map(article=>(
                             <a href={article.link} rel="noreferrer" target="_blank">
                                 <MediumCard>
-                                        <img src={article.thumbnail} alt="thumbanil image" aria-hidden="true"/>
+                                        <img src={article.thumbnail} alt={article.title} aria-hidden="true"/>
                                         <div className="desc-container">
                                             <p className="title">{article.title}</p>
                                             <div className="footer-desc">
