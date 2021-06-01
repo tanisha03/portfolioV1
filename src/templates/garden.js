@@ -4,13 +4,15 @@ import SEO from "../components/SEO"
 import {Heading} from "./shared"
 import ShareCard from "./shared/ShareCard"
 import {tokens} from "../../config/themes";
+import WrapperContainer from "./shared/WrapperContainer";
+
 
 const GardenPage = ({children,pageContext}) => {
   console.log(pageContext);
   return(
     <Layout>
       <SEO title="Garden" />
-      <div style={{padding:"4% 8%", width:"100%"}}>
+      <WrapperContainer>
         <Heading>
           <h1>{pageContext?.frontmatter?.title}</h1>
           <div className="header-wrapper">
@@ -30,7 +32,7 @@ const GardenPage = ({children,pageContext}) => {
         <ShareCard 
           link={`http://twitter.com/intent/tweet?text=${pageContext?.frontmatter?.title}&url=http://tanishasabherwal.netlify.app${pageContext?.frontmatter?.slug}&via=tanishaaa03`}
         />
-      </div>
+      </WrapperContainer>
     </Layout>
 )};
 
