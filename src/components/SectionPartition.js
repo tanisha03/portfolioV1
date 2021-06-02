@@ -55,7 +55,7 @@ const SectionContent=styled.div`
         align-items:center;
         // margin-left:${tokens.space[5]};
         a img{
-            width:170px;
+            width:182px;
             height:260px;
             margin:${tokens.space[2]};
         }
@@ -79,10 +79,16 @@ const SectionContent=styled.div`
             .container{
                 a img{
                     margin:${tokens.space[4]} 0;
-                    width:100%; 
-                    min-height:378px;
                 }  
             }
+    }
+    @media only screen and (max-width: 480px) {
+        .container{
+            a img{
+                width:100%; 
+                min-height:420px;
+            }  
+        }
     }
 `;
 
