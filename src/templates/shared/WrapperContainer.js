@@ -10,12 +10,12 @@ const  WrapperContainer = styled.div`
     }
 
     p,div{
-        margin-bottom:${tokens.space[4]};
+        margin:${tokens.space[4]} 0;
     }
 
     img{
         max-width:1000px;
-        margin:${tokens.space[2]} 0;
+        margin:${tokens.space[4]} 0;
     }
 
     @media only screen and (max-width: 576px) {
