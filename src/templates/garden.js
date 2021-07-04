@@ -8,7 +8,6 @@ import WrapperContainer from "./shared/WrapperContainer";
 
 
 const GardenPage = ({children,pageContext}) => {
-  console.log(pageContext);
   return(
     <Layout>
       <SEO title="Garden" />

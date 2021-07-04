@@ -9,7 +9,7 @@ const  WrapperContainer = styled.div`
         margin-bottom:${tokens.space[2]};
     }
 
-    p,div{
+    p{
         margin:${tokens.space[4]} 0;
     }
 
