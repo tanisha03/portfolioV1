@@ -23,7 +23,7 @@ const LINKS=[
     }
 ];
 
-const FooterContainer = styled.div`
+const FooterContainer = styled.footer`
     font-family:${tokens.font.primary};
     font-size:${tokens.fontSizes[3]};
     font-weight:${tokens.fontWeights.thin};
