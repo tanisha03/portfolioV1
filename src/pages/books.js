@@ -11,10 +11,15 @@ const BookWrapper = styled.div`
   padding:4%;
   display:flex;
   flex-wrap:wrap;
+  img{
+    max-width:280px;
+    max-height:400px;
+  }
   @media only screen and (max-width: 576px) {
     div{
      width:100%;
      img{
+       max-width:480px;
        width:100%;
      }
     }
@@ -88,8 +93,7 @@ export const pageQuery = graphql`
             cover {
               childImageSharp {
                 gatsbyImageData(
-                  width: 250
-                  height:358
+                  formats: [AUTO, WEBP, AVIF]
                 )
               }
             }

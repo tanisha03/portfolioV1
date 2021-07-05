@@ -82,8 +82,19 @@ module.exports = {
         plugins: [`gatsby-remark-images`],
       }
     },
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`, `webp`],
+          placeholder: `dominantColor`,
+          quality: 50,
+          breakpoints: [480, 576, 750, 1080, 1366, 1920],
+          backgroundColor: `transparent`
+        }
+      }
+    },
     'gatsby-transformer-sharp',
-    `gatsby-plugin-image`,
     'gatsby-plugin-sharp',
     'gatsby-plugin-styled-components',
     {

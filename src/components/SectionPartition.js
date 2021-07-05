@@ -55,9 +55,9 @@ const SectionContent=styled.div`
         align-items:center;
         // margin-left:${tokens.space[5]};
         a img{
-            width:182px;
-            height:260px;
-            margin:${tokens.space[2]};
+            max-width:210px;
+            max-height:300px;
+            margin:${tokens.space[3]};
         }
     }
     @media only screen and (max-width: 768px) {
@@ -86,7 +86,7 @@ const SectionContent=styled.div`
         .container{
             a img{
                 width:100%; 
-                min-height:420px;
+                min-height:380px;
             }  
         }
     }
