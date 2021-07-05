@@ -4,6 +4,8 @@ import SEO from "../components/SEO"
 import {graphql, Link } from "gatsby";
 import styled from 'styled-components';
 import {tokens} from "../../config/themes"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
 
 const BookWrapper = styled.div`
   padding:4%;
@@ -20,9 +22,8 @@ const BookWrapper = styled.div`
 `;
 
 const BookContainer = styled.div`
-  margin:${tokens.space[4]};
+  margin:${tokens.space[6]};
   img{
-    margin-bottom:${tokens.space[4]};
     box-shadow: 0 0 2px rgba(33,33,33,.2);
     transition: box-shadow .5s ease-in-out;
     &:hover{
@@ -32,7 +33,8 @@ const BookContainer = styled.div`
   h2{
     color:${tokens.colors.primary[0]};
     font-weight:${tokens.fontWeights.medium};
-    margin-bottom:${tokens.space[2]};
+    margin:${tokens.space[3]} 0 ${tokens.space[2]};
+    font-size:${tokens.fontSizes[5]};
   }
   h4{
     color:${tokens.colors.primary[1]};
@@ -52,7 +54,9 @@ const BooksPage = ({
       {
         booksQuery.edges.map(item=>(
           <BookContainer>
-            <Link to={item.node.frontmatter.link}><img src={item.node.frontmatter.cover.childImageSharp.fluid.src} alt={item.node.frontmatter.title}/></Link>
+            <Link to={item.node.frontmatter.link}>
+              <GatsbyImage image={getImage(item.node.frontmatter.cover)} alt={item.node.frontmatter.title}/>
+            </Link>
             <h2>{item.node.frontmatter.title}</h2>
             <h4>{item.node.frontmatter.author}</h4>
           </BookContainer>
@@ -83,9 +87,10 @@ export const pageQuery = graphql`
             link
             cover {
               childImageSharp {
-                fluid(maxWidth: 250, maxHeight: 380) {
-                  src
-                }
+                gatsbyImageData(
+                  width: 250
+                  height:358
+                )
               }
             }
           }
