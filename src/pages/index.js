@@ -155,7 +155,7 @@ export const pageQuery = graphql`
             cover {
               childImageSharp {
                 gatsbyImageData(
-                  formats: [AUTO, WEBP, AVIF]
+                  layout: CONSTRAINED
                 )
               }
             }
@@ -174,7 +174,7 @@ export const pageQuery = graphql`
             cover {
               childImageSharp {
                 gatsbyImageData(
-                  formats: [AUTO, WEBP, AVIF]
+                  layout: CONSTRAINED
                 )
               }
             }
