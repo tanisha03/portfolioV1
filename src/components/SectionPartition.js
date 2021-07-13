@@ -86,7 +86,8 @@ const SectionContent=styled.div`
         .container{
             a img{
                 width:100%; 
-                min-height:380px;
+                max-width:420px;
+                max-height:680px;
             }  
         }
     }

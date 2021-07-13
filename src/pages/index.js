@@ -6,7 +6,6 @@ import SEO from "../components/SEO";
 import SectionPartition from "../components/SectionPartition";
 import styled from 'styled-components';
 import {tokens} from "../../config/themes"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 
 const GardenWrapper =  styled.div`
@@ -98,8 +97,8 @@ const IndexPage = ({
               {
                 drawingsQuery && drawingsQuery.edges.map(i=>(
                   <Link to={i.node.frontmatter.slug}>
-                       <GatsbyImage image={getImage(i.node.frontmatter.cover)} alt={i.node.frontmatter.title}/>
-                      {/* <img src={i.node.frontmatter.cover.childImageSharp.fluid} alt={i.node.frontmatter.title}/> */}
+                       {/* <GatsbyImage image={getImage(i.node.frontmatter.cover)} alt={i.node.frontmatter.title}/> */}
+                      <img src={i.node.frontmatter.cover.childImageSharp.fluid.src} alt={i.node.frontmatter.title}/>
                   </Link>
                 ))
               }
@@ -120,7 +119,8 @@ const IndexPage = ({
               {
                 booksQuery && booksQuery.edges.map(i=>(
                   <Link to={i.node.frontmatter.content ? i.node.frontmatter.content : i.node.frontmatter.link}>
-                      <GatsbyImage image={getImage(i.node.frontmatter.cover)} alt={i.node.frontmatter.title}/>
+                      {/* <GatsbyImage image={getImage(i.node.frontmatter.cover)} alt={i.node.frontmatter.title}/> */}
+                      <img src={i.node.frontmatter.cover.childImageSharp.fluid.src} alt={i.node.frontmatter.title}/>
                   </Link>
                 ))
               }
@@ -154,9 +154,9 @@ export const pageQuery = graphql`
             link
             cover {
               childImageSharp {
-                gatsbyImageData(
-                  layout: CONSTRAINED
-                )
+                fluid(maxWidth: 420, maxHeight: 600) {
+                  ...GatsbyImageSharpFluid
+                }
               }
             }
           }
@@ -173,9 +173,9 @@ export const pageQuery = graphql`
             slug
             cover {
               childImageSharp {
-                gatsbyImageData(
-                  layout: CONSTRAINED
-                )
+                fluid(maxWidth: 400, maxHeight: 600) {
+                  ...GatsbyImageSharpFluid
+                }
               }
             }
           }
