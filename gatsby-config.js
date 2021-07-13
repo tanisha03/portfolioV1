@@ -90,7 +90,6 @@ module.exports = {
           placeholder: `dominantColor`,
           quality: 50,
           breakpoints: [480, 576, 750, 1080, 1366, 1920],
-          backgroundColor: `transparent`
         }
       }
     },
