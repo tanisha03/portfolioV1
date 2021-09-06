@@ -110,6 +110,23 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-notion-api`,
+      options: {
+        token: `secret_vROla5S9B7hnuHGWr9TORfi3Y3elGBDXJneKgPSq2pu`,
+        databaseId: `813a12502af74bbd876936517304151b`,
+        propsToFrontmatter: true,
+        lowerTitleLevel: true,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        footnotes: true,
+        gfm: true,
+        plugins: [],
+      },
+    },
+    {
       resolve: "gatsby-plugin-page-creator",
       options: {
         path: `${__dirname}/content/books`

@@ -33,6 +33,7 @@
         "gatsby-remark-embedder": "^2.0.1",
         "gatsby-remark-images": "^3.2.4",
         "gatsby-source-filesystem": "^2.11.1",
+        "gatsby-source-notion-api": "^0.10.0",
         "gatsby-transformer-remark": "^2.7.0",
         "gatsby-transformer-sharp": "^2.12.1",
         "react": "^16.12.0",
