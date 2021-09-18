@@ -1,5 +1,3 @@
-# tanishasabherwal.me
+# portfolio V1 [(tanishasabherwal.me)](https://www.tanishasabherwal.me/)
 
-Tanisha's personal internet space running on Gatsby. This contains my digital garden, which includes all my thoughts and learnings jot down in various stages of completion.
-
-The source for this site is not adaptable or themeable and might not match your needs or aesthetic. Feel free to take whatever inspiration from it that you want and create your own version.
+First iteration of my personal website built with Gatsby. Vist the current version [here](https://github.com/tanisha03/tanishasabherwal.me)
